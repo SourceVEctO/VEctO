@@ -4984,6 +4984,25 @@ send(msg.chat_id_, msg.id_," ゠⁞لا توجد قوانين هنا")
 end    
 end
 
+$sudo = array("000","000","000");# ايدي متعدد 
+
+if($text == "السرعة" and  in_array($from_id,$sudo)){
+$userb = strtoupper($userbot);
+if($sppedtime == 3  or $sppedtime <3){
+$f ="ممتازه";}
+if($sppedtime == 9 or $sppedtime >9){
+$f ="جيده";}
+if($sppedtime == 10 or $sppedtime >10){
+$f ="ضعيفه";}
+bot('sendmessage',[
+'chat_id'=>$chat_id,
+'text'=>"✬︙سرعة البوت ⋙ $f ،*
+",'parse_mode' =>"markdown",
+'disable_web_page_preview' => true ,
+'reply_to_message_id'=>$message_id,
+]);
+}
+
 if text == "الاوامر المضافه" and Constructor(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
@@ -4994,27 +5013,6 @@ send(msg.chat_id_, msg.id_,' ゠⁞عـليك الاشـتࢪاك في قنـا�
 end
 return false
 end
-
-if text == "ترتيب الاوامر" and Constructor(msg) then
-database:set(bot_id.."VEctO:Set:Cmd:Group:New1"..msg.chat_id_..":ا","ايدي")
-database:sadd(bot_id.."VEctO:List:Cmd:Group:New"..msg.chat_id_,"ا")
-database:set(bot_id.."VEctO:Set:Cmd:Group:New1"..msg.chat_id_..":م","رفع مميز")
-database:sadd(bot_id.."VEctO:List:Cmd:Group:New"..msg.chat_id_,"م")
-database:set(bot_id.."VEctO:Set:Cmd:Group:New1"..msg.chat_id_..":اد","رفع ادمن")
-database:sadd(bot_id.."VEctO:List:Cmd:Group:New"..msg.chat_id_,"اد")
-database:set(bot_id.."VEctO:Set:Cmd:Group:New1"..msg.chat_id_..":مد","رفع مدير")
-database:sadd(bot_id.."VEctO:List:Cmd:Group:New"..msg.chat_id_,"مد")
-database:set(bot_id.."VEctO:Set:Cmd:Group:New1"..msg.chat_id_..":من","رفع منشئ")
-database:sadd(bot_id.."VEctO:List:Cmd:Group:New"..msg.chat_id_,"من")
-database:set(bot_id.."VEctO:Set:Cmd:Group:New1"..msg.chat_id_..":اس","رفع منشئ اساسي")
-database:sadd(bot_id.."VEctO:List:Cmd:Group:New"..msg.chat_id_,"اس")
-database:set(bot_id.."VEctO:Set:Cmd:Group:New1"..msg.chat_id_..":تعط","تعطيل الايدي بالصوره")
-database:sadd(bot_id.."VEctO:List:Cmd:Group:New"..msg.chat_id_,"تعط")
-database:set(bot_id.."VEctO:Set:Cmd:Group:New1"..msg.chat_id_..":تفع","تفعيل الايدي بالصوره")
-database:sadd(bot_id.."VEctO:List:Cmd:Group:New"..msg.chat_id_,"تفع")
-send(msg.chat_id_, msg.id_,"⌔︙تم ترتيب الاوامر بالشكل التالي ~\n- ايدي - ا .\n- مميز - م .\n- ادمن - اد .\n- مدير - مد . \n- منشى - من . \n- المنشئ الاساسي - اس  . \n- تعطيل الايدي بالصوره - تعط .\n- تفعيل الايدي بالصوره - تفع .")  
-end
-
 local list = database:smembers(bot_id.."VEctO:List:Cmd:Group:New"..msg.chat_id_.."")
 t = " ゠⁞قائمه الاوامر المضافه  \n — — — — — — — — — \n"
 for k,v in pairs(list) do
