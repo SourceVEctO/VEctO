@@ -4984,25 +4984,6 @@ send(msg.chat_id_, msg.id_," ゠⁞لا توجد قوانين هنا")
 end    
 end
 
-$sudo = array("000","000","000");# ايدي متعدد 
-
-if($text == "السرعة" and  in_array($from_id,$sudo)){
-$userb = strtoupper($userbot);
-if($sppedtime == 3  or $sppedtime <3){
-$f ="ممتازه";}
-if($sppedtime == 9 or $sppedtime >9){
-$f ="جيده";}
-if($sppedtime == 10 or $sppedtime >10){
-$f ="ضعيفه";}
-bot('sendmessage',[
-'chat_id'=>$chat_id,
-'text'=>"✬︙سرعة البوت ⋙ $f ،*
-",'parse_mode' =>"markdown",
-'disable_web_page_preview' => true ,
-'reply_to_message_id'=>$message_id,
-]);
-}
-
 if text == "الاوامر المضافه" and Constructor(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
