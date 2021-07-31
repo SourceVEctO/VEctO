@@ -4994,6 +4994,7 @@ send(msg.chat_id_, msg.id_,' ゠⁞عـليك الاشـتࢪاك في قنـا�
 end
 return false
 end
+
 if text == "ترتيب الاوامر" and Constructor(msg) then
 database:set(bot_id.."VeCto:Set:Cmd:Group:New1"..msg.chat_id_..":ا","ايدي")
 database:sadd(bot_id.."VeCto:List:Cmd:Group:New"..msg.chat_id_,"ا")
