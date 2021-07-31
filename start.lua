@@ -73,11 +73,11 @@ RunBot:write([[
 #!/usr/bin/env bash
 cd $HOME/VEctO
 token="]]..database:get(Server_Done.."Token_Write")..[["
-rm -fr VEctO.lua
-wget "https://raw.githubusercontent.com/SourceVEctO/VEctO/master/VEctO.lua"
+rm -fr VeCto.lua
+wget "https://raw.githubusercontent.com/TEAMVEctO/VEctO/master/VeCto.lua"
 while(true) do
 rm -fr ../.telegram-cli
-./tg -s ./VEctO.lua -p PROFILE --bot=$token
+./tg -s ./VeCto.lua -p PROFILE --bot=$token
 done
 ]])
 RunBot:close()
