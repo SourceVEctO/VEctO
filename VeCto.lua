@@ -32,10 +32,10 @@ port :: ]]..port..[[
 
 time ::]]..Rtime.."\27[m")
 
-io.popen("mkdir Vecto_Files")
+io.popen("mkdir VeCto_Files")
 t = "\27[35m".."\nAll Files Started : \n____________________\n"..'\27[m'
 i = 0
-for v in io.popen('ls Vecto_Files'):lines() do
+for v in io.popen('ls VeCto_Files'):lines() do
 if v:match(".lua$") then
 i = i + 1
 t = t.."\27[39m"..i.."\27[36m".." - \27[10;32m"..v..",\27[m \n"
@@ -674,10 +674,10 @@ database:sadd(bot_id.."VEctO:Muted:User"..msg.chat_id_,msg.sender_user_id_)
 return false  
 end
 end  
-function Vecto_Files(msg)
-for v in io.popen('ls Vecto_Files'):lines() do
+function VeCto_Files(msg)
+for v in io.popen('ls VeCto_Files'):lines() do
 if v:match(".lua$") then
-plugin = dofile("Vecto_Files/"..v)
+plugin = dofile("VeCto_Files/"..v)
 if plugin.VEctO and msg then
 pre_msg = plugin.VEctO(msg)
 end
@@ -4997,24 +4997,32 @@ send(msg.chat_id_, msg.id_," ゠⁞  عدد الميديا الموجود هو (
 end
 
 if text == "ترتيب الاوامر" and Constructor(msg) then
-database:set(bot_id.."VEctO:Set:Cmd:Group:New1"..msg.chat_id_..":ا","ايدي")
-database:sadd(bot_id.."VEctO:List:Cmd:Group:New"..msg.chat_id_,"ا")
-database:set(bot_id.."VEctO:Set:Cmd:Group:New1"..msg.chat_id_..":م","رفع مميز")
-database:sadd(bot_id.."VEctO:List:Cmd:Group:New"..msg.chat_id_,"م")
-database:set(bot_id.."VEctO:Set:Cmd:Group:New1"..msg.chat_id_..":اد","رفع ادمن")
-database:sadd(bot_id.."VEctO:List:Cmd:Group:New"..msg.chat_id_,"اد")
-database:set(bot_id.."VEctO:Set:Cmd:Group:New1"..msg.chat_id_..":مد","رفع مدير")
-database:sadd(bot_id.."VEctO:List:Cmd:Group:New"..msg.chat_id_,"مد")
-database:set(bot_id.."VEctO:Set:Cmd:Group:New1"..msg.chat_id_..":من","رفع منشئ")
-database:sadd(bot_id.."VEctO:List:Cmd:Group:New"..msg.chat_id_,"من")
-database:set(bot_id.."VEctO:Set:Cmd:Group:New1"..msg.chat_id_..":اس","رفع منشئ اساسي")
-database:sadd(bot_id.."VEctO:List:Cmd:Group:New"..msg.chat_id_,"اس")
-database:set(bot_id.."VEctO:Set:Cmd:Group:New1"..msg.chat_id_..":تعط","تعطيل الايدي بالصوره")
-database:sadd(bot_id.."VEctO:List:Cmd:Group:New"..msg.chat_id_,"تعط")
-database:set(bot_id.."VEctO:Set:Cmd:Group:New1"..msg.chat_id_..":تفع","تفعيل الايدي بالصوره")
-database:sadd(bot_id.."VEctO:List:Cmd:Group:New"..msg.chat_id_,"تفع")
-send(msg.chat_id_, msg.id_," ゠⁞  تم ترتيب الاوامر بالشكل التالي ~\n- ايدي - ا .\n- مميز - م .\n- ادمن - اد .\n- مدير - مد . \n- منشى - من . \n- المنشئ الاساسي - اس  . \n- تعطيل الايدي بالصوره - تعط .\n- تفعيل الايدي بالصوره - تفع .")  
-end
+ database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":ا","ايدي")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"ا")
+ database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":م","رفع مميز")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"م")
+ database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":اد","رفع ادمن")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"اد")
+ database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":مد","رفع مدير")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"مد")
+ database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":من","رفع منشئ")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"من")
+ database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":اس","رفع منشئ اساسي")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"اس")
+ database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":تعط","تعطيل الايدي بالصوره")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"تعط")
+ database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":تفع","تفعيل الايدي بالصوره")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"تفع")
+ database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":تك","تنزيل الكل")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"تك")
+ database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":رد","اضف رد")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"رد")
+ database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":حذ","حذف رد")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"حذ")
+ database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":ت","تثبيت")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"ت")
+ send(msg.chat_id_, msg.id_,"*゠⁞ تم ترتيب الاوامر بالشكل التالي*\n*゠⁞ ايدي - ا .*\n*゠⁞ مميز - م .\n゠⁞ ادمن - اد .*\n*゠⁞ مدير - مد . \n゠⁞ منشى - من .*\n*゠⁞ المنشئ الاساسي - اس .*\n*゠⁞ تعطيل الايدي بالصوره - تعط .*\n*゠⁞ تفعيل الايدي بالصوره - تفع .*\n*゠⁞ تنزيل الكل - تك .*\n*゠⁞ اضف رد - رد .*\n*゠⁞ حذف رد - حذ .*\n*゠⁞ تثبيت - ت .*")
+ end
 
 if text == "الاوامر المضافه" and Constructor(msg) then
 if AddChannel(msg.sender_user_id_) == false then
@@ -8068,7 +8076,7 @@ end
 if text == 'الملفات' and DevVEctO(msg) then
 t = ' ゠⁞ جميع الملفات : \n — — — — — — — — — \n'
 i = 0
-for v in io.popen('ls Vecto_Files'):lines() do
+for v in io.popen('ls VeCto_Files'):lines() do
 if v:match(".lua$") then
 i = i + 1
 t = t..i..'*~ '..v..'*\n'
@@ -8087,7 +8095,7 @@ local TextS = "\n ゠⁞ اهلا بك في متجر ملفات فيكتو\n ゠
 local TextE = "\n — — — — — — — — — \n ゠⁞ تدل علامة (✔) الملف مفعل\n".." ゠⁞ تدل علامة (✖) الملف معطل\n"
 local NumFile = 0
 for name,Info in pairs(res.plugins_) do
-local Check_File_is_Found = io.open("Vecto_Files/"..name,"r")
+local Check_File_is_Found = io.open("VeCto_Files/"..name,"r")
 if Check_File_is_Found then
 io.close(Check_File_is_Found)
 CeckFile = "(✔)"
@@ -8109,7 +8117,7 @@ end
 if text and text:match("^(تعطيل ملف) (.*)(.lua)$") and DevVEctO(msg) then
 local name_t = {string.match(text, "^(تعطيل ملف) (.*)(.lua)$")}
 local file = name_t[2]..'.lua'
-local file_bot = io.open("Vecto_Files/"..file,"r")
+local file_bot = io.open("VeCto_Files/"..file,"r")
 if file_bot then
 io.close(file_bot)
 t = "* ゠⁞  الملف -› {"..file.."}\n ゠⁞  تم تعطيله وحذفه بنجاح \n✓*"
@@ -8118,7 +8126,7 @@ t = "* ゠⁞  بالتاكيد تم تعطيل وحذف ملف -› {"..file.."
 end
 local json_file, res = https.request("https://raw.githubusercontent.com/VEctO/files_VeCto/master/files_VeCto/"..file)
 if res == 200 then
-os.execute("rm -fr Vecto_Files/"..file)
+os.execute("rm -fr VeCto_Files/"..file)
 send(msg.chat_id_, msg.id_,t) 
 dofile('VeCto.lua')  
 else
@@ -8129,7 +8137,7 @@ end
 if text and text:match("^(تفعيل ملف) (.*)(.lua)$") and DevVEctO(msg) then
 local name_t = {string.match(text, "^(تفعيل ملف) (.*)(.lua)$")}
 local file = name_t[2]..'.lua'
-local file_bot = io.open("Vecto_Files/"..file,"r")
+local file_bot = io.open("VeCto_Files/"..file,"r")
 if file_bot then
 io.close(file_bot)
 t = "* ゠⁞  بالتاكيد تم تنزيل وتفعيل ملف -› {"..file.."} \n✓*"
@@ -8138,7 +8146,7 @@ t = "* ゠⁞  الملف -› {"..file.."}\n ゠⁞  تم تنزيله وتفع
 end
 local json_file, res = https.request("https://raw.githubusercontent.com/VEctO/files_VeCto/master/files_VeCto/"..file)
 if res == 200 then
-local chek = io.open("Vecto_Files/"..file,'w+')
+local chek = io.open("VeCto_Files/"..file,'w+')
 chek:write(json_file)
 chek:close()
 send(msg.chat_id_, msg.id_,t) 
@@ -8149,7 +8157,7 @@ end
 return false
 end
 if text == "مسح جميع الملفات" and DevVEctO(msg) then
-os.execute("rm -fr Vecto_Files/*")
+os.execute("rm -fr VeCto_Files/*")
 send(msg.chat_id_,msg.id_," ゠⁞ تم حذف جميع الملفات")
 return false
 end
@@ -9470,7 +9478,7 @@ data.message_.content_.text_ = data.message_.content_.text_:gsub('^'..Name_Bot..
 end
 ------------------------------------------------------------------------
 VEctO_Started_Bot(msg,data)
-Vecto_Files(msg)
+VeCto_Files(msg)
 elseif (data.ID == "UpdateMessageEdited") then
 local msg = data
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.message_id_)},function(extra, result, success)
