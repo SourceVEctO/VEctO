@@ -5023,7 +5023,8 @@ if text == "ترتيب الاوامر" and Constructor(msg) then
  database:sadd(bot_id.."VEctOList:Cmd:Group:New"..msg.chat_id_,"ت")
  send(msg.chat_id_, msg.id_,"*゠⁞ تم ترتيب الاوامر بالشكل التالي*\n*゠⁞ ايدي - ا .*\n*゠⁞ مميز - م .\n゠⁞ ادمن - اد .*\n*゠⁞ مدير - مد . \n゠⁞ منشى - من .*\n*゠⁞ المنشئ الاساسي - اس .*\n*゠⁞ تعطيل الايدي بالصوره - تعط .*\n*゠⁞ تفعيل الايدي بالصوره - تفع .*\n*゠⁞ تنزيل الكل - تك .*\n*゠⁞ اضف رد - رد .*\n*゠⁞ حذف رد - حذ .*\n*゠⁞ تثبيت - ت .*")
  end
-
+ end
+ 
 if text == "الاوامر المضافه" and Constructor(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
