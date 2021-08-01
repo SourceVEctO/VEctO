@@ -8209,7 +8209,7 @@ Text = [[
      
 [ ゠⁞  VeCto 𝖲𝗈𝗎𝗋𝖼𝖾  .](http://t.me/TEAM_VEctO)
      
-[ ゠⁞  VEctO Developer .](http://t.me/mmssds)
+[ ゠⁞  VeCto Developer .](http://t.me/mmssds)
 
 
 
