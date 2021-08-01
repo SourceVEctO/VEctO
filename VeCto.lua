@@ -501,8 +501,8 @@ function Reply_Status(msg,user_id,status,text)
 tdcli_function ({ID = "GetUser",user_id_ = user_id},function(arg,data) 
 if data.first_name_ ~= false then
 local UserName = (data.username_ or "TEAM_VEctO")
-local NameUser = "[- VEctO 𝖲𝗈𝗎𝗋𝖼𝖾  .](https://t.me/TEAM_VEctO)\n — — — — — — — — —\n ゠⁞بواسطه -› ["..data.first_name_.."](T.me/"..UserName..")"
-local NameUserr = "[- VEctO 𝖲𝗈𝗎𝗋𝖼𝖾  .](https://t.me/TEAM_VEctO)\n — — — — — — — — —\n ゠⁞اسم المستخدم -› ["..data.first_name_.."](T.me/"..UserName..")"
+local NameUser = "[- VeCto 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/TEAM_VEctO)\n — — — — — — — — —\n ゠⁞بواسطه -› ["..data.first_name_.."](T.me/"..UserName..")"
+local NameUserr = "[- VeCto 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/TEAM_VEctO)\n — — — — — — — — —\n ゠⁞اسم المستخدم -› ["..data.first_name_.."](T.me/"..UserName..")"
 if status == "lock" then
 send(msg.chat_id_, msg.id_,NameUser.."\n"..text.."\n— — — — — — — — —\n ゠⁞تم تنفيذ الامر بخاصيه ( المسح )\n")
 return false
@@ -3463,19 +3463,19 @@ function by_reply(extra, result, success)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
 local VEctOrt = database:get(bot_id.."VEctO:Comd:New:rt:bot:"..RTPA..msg.chat_id_)
 if VEctOrt == "مميز" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"[- VEctO 𝖲𝗈𝗎𝗋𝖼𝖾  .](https://t.me/TEAM_VEctO)\n — — — — — — — — —\n ゠⁞العضو -› ["..data.first_name_.."](t.me/"..(data.username_ or "TEAM_VEctO")..")".."\n ゠⁞تم رفعه "..RTPA.." هنا\n")
+send(msg.chat_id_, msg.id_,"[- VeCto 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/TEAM_VEctO)\n — — — — — — — — —\n ゠⁞العضو -› ["..data.first_name_.."](t.me/"..(data.username_ or "TEAM_VEctO")..")".."\n ゠⁞تم رفعه "..RTPA.." هنا\n")
 database:set(bot_id.."VEctO:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_,RTPA) 
 database:sadd(bot_id.."VEctO:Special:User"..msg.chat_id_,result.sender_user_id_)  
 elseif VEctOrt == "ادمن" and Owner(msg) then 
-send(msg.chat_id_, msg.id_,"[- VEctO 𝖲𝗈𝗎𝗋𝖼𝖾  .](https://t.me/TEAM_VEctO)\n — — — — — — — — —\n ゠⁞العضو -› ["..data.first_name_.."](t.me/"..(data.username_ or "TEAM_VEctO")..")".."\n ゠⁞تم رفعه "..RTPA.." هنا\n")
+send(msg.chat_id_, msg.id_,"[- VeCto 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/TEAM_VEctO)\n — — — — — — — — —\n ゠⁞العضو -› ["..data.first_name_.."](t.me/"..(data.username_ or "TEAM_VEctO")..")".."\n ゠⁞تم رفعه "..RTPA.." هنا\n")
 database:set(bot_id.."VEctO:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_,RTPA)
 database:sadd(bot_id.."VEctO:Mod:User"..msg.chat_id_,result.sender_user_id_)  
 elseif VEctOrt == "مدير" and Constructor(msg) then
-send(msg.chat_id_, msg.id_,"[- VEctO 𝖲𝗈𝗎𝗋𝖼𝖾  .](https://t.me/TEAM_VEctO)\n — — — — — — — — —\n ゠⁞العضو -› ["..data.first_name_.."](t.me/"..(data.username_ or "TEAM_VEctO")..")".."\n ゠⁞تم رفعه "..RTPA.." هنا\n")
+send(msg.chat_id_, msg.id_,"[- VeCto 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/TEAM_VEctO)\n — — — — — — — — —\n ゠⁞العضو -› ["..data.first_name_.."](t.me/"..(data.username_ or "TEAM_VEctO")..")".."\n ゠⁞تم رفعه "..RTPA.." هنا\n")
 database:set(bot_id.."VEctO:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_,RTPA)  
 database:sadd(bot_id.."VEctO:Manager"..msg.chat_id_,result.sender_user_id_)  
 elseif VEctOrt == "عضو" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"[- VEctO 𝖲𝗈𝗎𝗋𝖼𝖾  .](https://t.me/TEAM_VEctO)\n — — — — — — — — —\n ゠⁞العضو -› ["..data.first_name_.."](t.me/"..(data.username_ or "TEAM_VEctO")..")".."\n ゠⁞تم رفعه "..RTPA.." هنا\n")
+send(msg.chat_id_, msg.id_,"[- VeCto 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/TEAM_VEctO)\n — — — — — — — — —\n ゠⁞العضو -› ["..data.first_name_.."](t.me/"..(data.username_ or "TEAM_VEctO")..")".."\n ゠⁞تم رفعه "..RTPA.." هنا\n")
 end
 end,nil)   
 end   
@@ -3498,19 +3498,19 @@ function by_reply(extra, result, success)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
 local VEctOrt = database:get(bot_id.."VEctO:Comd:New:rt:bot:"..RTPA..msg.chat_id_)
 if VEctOrt == "مميز" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"[- VEctO 𝖲𝗈𝗎𝗋𝖼𝖾  .](https://t.me/TEAM_VEctO)\n — — — — — — — — —\n ゠⁞العضو -› ["..data.first_name_.."](t.me/"..(data.username_ or "TEAM_VEctO")..")".."\n ゠⁞تم تنزيله من "..RTPA.." هنا\n")  
+send(msg.chat_id_, msg.id_,"[- VeCto 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/TEAM_VEctO)\n — — — — — — — — —\n ゠⁞العضو -› ["..data.first_name_.."](t.me/"..(data.username_ or "TEAM_VEctO")..")".."\n ゠⁞تم تنزيله من "..RTPA.." هنا\n")  
 database:srem(bot_id.."VEctO:Special:User"..msg.chat_id_,result.sender_user_id_)  
 database:del(bot_id.."VEctO:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_)
 elseif VEctOrt == "ادمن" and Owner(msg) then 
-send(msg.chat_id_, msg.id_,"[- VEctO 𝖲𝗈𝗎𝗋𝖼𝖾  .](https://t.me/TEAM_VEctO)\n — — — — — — — — —\n ゠⁞العضو -› ["..data.first_name_.."](t.me/"..(data.username_ or "TEAM_VEctO")..")".."\n ゠⁞تم تنزيله من "..RTPA.." هنا\n")  
+send(msg.chat_id_, msg.id_,"[- VeCto 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/TEAM_VEctO)\n — — — — — — — — —\n ゠⁞العضو -› ["..data.first_name_.."](t.me/"..(data.username_ or "TEAM_VEctO")..")".."\n ゠⁞تم تنزيله من "..RTPA.." هنا\n")  
 database:srem(bot_id.."VEctO:Mod:User"..msg.chat_id_,result.sender_user_id_) 
 database:del(bot_id.."VEctO:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_)
 elseif VEctOrt == "مدير" and Constructor(msg) then
-send(msg.chat_id_, msg.id_,"[- VEctO 𝖲𝗈𝗎𝗋𝖼𝖾  .](https://t.me/TEAM_VEctO)\n — — — — — — — — —\n ゠⁞العضو -› ["..data.first_name_.."](t.me/"..(data.username_ or "TEAM_VEctO")..")".."\n ゠⁞تم تنزيله من "..RTPA.." هنا\n")  
+send(msg.chat_id_, msg.id_,"[- VeCto 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/TEAM_VEctO)\n — — — — — — — — —\n ゠⁞العضو -› ["..data.first_name_.."](t.me/"..(data.username_ or "TEAM_VEctO")..")".."\n ゠⁞تم تنزيله من "..RTPA.." هنا\n")  
 database:srem(bot_id.."VEctO:Manager"..msg.chat_id_,result.sender_user_id_)  
 database:del(bot_id.."VEctO:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_)
 elseif VEctOrt == "عضو" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"[- VEctO 𝖲𝗈𝗎𝗋𝖼𝖾  .](https://t.me/TEAM_VEctO)\n — — — — — — — — —\n ゠⁞العضو -› ["..data.first_name_.."](t.me/"..(data.username_ or "TEAM_VEctO")..")".."\n ゠⁞تم تنزيله من "..RTPA.." هنا\n")  
+send(msg.chat_id_, msg.id_,"[- VeCto 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/TEAM_VEctO)\n — — — — — — — — —\n ゠⁞العضو -› ["..data.first_name_.."](t.me/"..(data.username_ or "TEAM_VEctO")..")".."\n ゠⁞تم تنزيله من "..RTPA.." هنا\n")  
 end
 end,nil)   
 end   
@@ -3533,19 +3533,19 @@ function py_username(extra, result, success)
 if result.id_ then
 local VEctOrt = database:get(bot_id.."VEctO:Comd:New:rt:bot:"..text1[2]..msg.chat_id_)
 if VEctOrt == "مميز" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"[- VEctO 𝖲𝗈𝗎𝗋𝖼𝖾  .](https://t.me/TEAM_VEctO)\n — — — — — — — — —\n ゠⁞العضو -› ["..result.title_.."](t.me/"..(text1[3] or "TEAM_VEctO")..")".."\n ゠⁞تم رفعه "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"[- VeCto 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/TEAM_VEctO)\n — — — — — — — — —\n ゠⁞العضو -› ["..result.title_.."](t.me/"..(text1[3] or "TEAM_VEctO")..")".."\n ゠⁞تم رفعه "..text1[2].." هنا")   
 database:sadd(bot_id.."VEctO:Special:User"..msg.chat_id_,result.id_)  
 database:set(bot_id.."VEctO:Comd:New:rt:User:"..msg.chat_id_..result.id_,text1[2])
 elseif VEctOrt == "ادمن" and Owner(msg) then 
-send(msg.chat_id_, msg.id_,"[- VEctO 𝖲𝗈𝗎𝗋𝖼𝖾  .](https://t.me/TEAM_VEctO)\n — — — — — — — — —\n ゠⁞العضو -› ["..result.title_.."](t.me/"..(text1[3] or "TEAM_VEctO")..")".."\n ゠⁞تم رفعه "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"[- VeCto 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/TEAM_VEctO)\n — — — — — — — — —\n ゠⁞العضو -› ["..result.title_.."](t.me/"..(text1[3] or "TEAM_VEctO")..")".."\n ゠⁞تم رفعه "..text1[2].." هنا")   
 database:sadd(bot_id.."VEctO:Mod:User"..msg.chat_id_,result.id_)  
 database:set(bot_id.."VEctO:Comd:New:rt:User:"..msg.chat_id_..result.id_,text1[2])
 elseif VEctOrt == "مدير" and Constructor(msg) then
-send(msg.chat_id_, msg.id_,"[- VEctO 𝖲𝗈𝗎𝗋𝖼𝖾  .](https://t.me/TEAM_VEctO)\n — — — — — — — — —\n ゠⁞العضو -› ["..result.title_.."](t.me/"..(text1[3] or "TEAM_VEctO")..")".."\n ゠⁞تم رفعه "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"[- VeCto 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/TEAM_VEctO)\n — — — — — — — — —\n ゠⁞العضو -› ["..result.title_.."](t.me/"..(text1[3] or "TEAM_VEctO")..")".."\n ゠⁞تم رفعه "..text1[2].." هنا")   
 database:sadd(bot_id.."VEctO:Manager"..msg.chat_id_,result.id_)  
 database:set(bot_id.."VEctO:Comd:New:rt:User:"..msg.chat_id_..result.id_,text1[2])
 elseif VEctOrt == "عضو" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"[- VEctO 𝖲𝗈𝗎𝗋𝖼𝖾  .](https://t.me/TEAM_VEctO)\n — — — — — — — — —\n ゠⁞العضو -› ["..result.title_.."](t.me/"..(text1[3] or "TEAM_VEctO")..")".."\n ゠⁞تم رفعه "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"[- VeCto 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/TEAM_VEctO)\n — — — — — — — — —\n ゠⁞العضو -› ["..result.title_.."](t.me/"..(text1[3] or "TEAM_VEctO")..")".."\n ゠⁞تم رفعه "..text1[2].." هنا")   
 end
 else
 info = " ゠⁞المعرف غلط"
@@ -3571,19 +3571,19 @@ function py_username(extra, result, success)
 if result.id_ then
 local VEctOrt = database:get(bot_id.."VEctO:Comd:New:rt:bot:"..text1[2]..msg.chat_id_)
 if VEctOrt == "مميز" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"[- VEctO 𝖲𝗈𝗎𝗋𝖼𝖾  .](https://t.me/TEAM_VEctO)\n — — — — — — — — —\n ゠⁞العضو -› ["..result.title_.."](t.me/"..(text1[3] or "TEAM_VEctO")..")".."\n ゠⁞تم تنريله من "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"[- VeCto 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/TEAM_VEctO)\n — — — — — — — — —\n ゠⁞العضو -› ["..result.title_.."](t.me/"..(text1[3] or "TEAM_VEctO")..")".."\n ゠⁞تم تنريله من "..text1[2].." هنا")   
 database:srem(bot_id.."VEctO:Special:User"..msg.chat_id_,result.id_)  
 database:del(bot_id.."VEctO:Comd:New:rt:User:"..msg.chat_id_..result.id_)
 elseif VEctOrt == "ادمن" and Owner(msg) then 
-send(msg.chat_id_, msg.id_,"[- VEctO 𝖲𝗈𝗎𝗋𝖼𝖾  .](https://t.me/TEAM_VEctO)\n — — — — — — — — —\n ゠⁞العضو -› ["..result.title_.."](t.me/"..(text1[3] or "TEAM_VEctO")..")".."\n ゠⁞تم تنريله من "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"[- VeCto 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/TEAM_VEctO)\n — — — — — — — — —\n ゠⁞العضو -› ["..result.title_.."](t.me/"..(text1[3] or "TEAM_VEctO")..")".."\n ゠⁞تم تنريله من "..text1[2].." هنا")   
 database:srem(bot_id.."VEctO:Mod:User"..msg.chat_id_,result.id_)  
 database:del(bot_id.."VEctO:Comd:New:rt:User:"..msg.chat_id_..result.id_)
 elseif VEctOrt == "مدير" and Constructor(msg) then
-send(msg.chat_id_, msg.id_,"[- VEctO 𝖲𝗈𝗎𝗋𝖼𝖾  .](https://t.me/TEAM_VEctO)\n — — — — — — — — —\n ゠⁞العضو -› ["..result.title_.."](t.me/"..(text1[3] or "TEAM_VEctO")..")".."\n ゠⁞تم تنريله من "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"[- VeCto 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/TEAM_VEctO)\n — — — — — — — — —\n ゠⁞العضو -› ["..result.title_.."](t.me/"..(text1[3] or "TEAM_VEctO")..")".."\n ゠⁞تم تنريله من "..text1[2].." هنا")   
 database:srem(bot_id.."VEctO:Manager"..msg.chat_id_,result.id_)  
 database:del(bot_id.."VEctO:Comd:New:rt:User:"..msg.chat_id_..result.id_)
 elseif VEctOrt == "عضو" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"[- VEctO 𝖲𝗈𝗎𝗋𝖼𝖾  .](https://t.me/TEAM_VEctO)\n — — — — — — — — —\n ゠⁞العضو -› ["..result.title_.."](t.me/"..(text1[3] or "TEAM_VEctO")..")".."\n ゠⁞تم تنريله من "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"[- VeCto 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/TEAM_VEctO)\n — — — — — — — — —\n ゠⁞العضو -› ["..result.title_.."](t.me/"..(text1[3] or "TEAM_VEctO")..")".."\n ゠⁞تم تنريله من "..text1[2].." هنا")   
 end
 else
 info = " ゠⁞المعرف غلط"
@@ -8175,9 +8175,9 @@ Text = [[
 *- VeCto TeAM   .*
  — — — — — — — — — 
      
-[ ゠⁞ VEctO 𝖲𝗈𝗎𝗋𝖼𝖾   .](http://t.me/TEAM_VEctO)
+[ ゠⁞ VeCto 𝖲𝗈𝗎𝗋𝖼𝖾  .](http://t.me/TEAM_VEctO)
      
-[ ゠⁞ VeCto Developer .](http://t.me/mmssds)
+[ ゠⁞  .](http://t.me/mmssds)
 
 
 
@@ -9229,7 +9229,7 @@ local idchci = "-100"..idch
 local animation = DAata:match("^animation(.*)$"):gsub('chatid',''):gsub('chatid',''):gsub(idch,''):gsub('-100','')
 local Text =" ゠⁞تم اللغاء منعها بنجاح"
 inline = {
-{{text = ' ゠⁞ VEctO 𝖲𝗈𝗎𝗋𝖼𝖾   .',url='http://t.me/TEAM_VEctO'}},
+{{text = ' ゠⁞ VeCto 𝖲𝗈𝗎𝗋𝖼𝖾  .',url='http://t.me/TEAM_VEctO'}},
 }
 https.request("https://api.telegram.org/bot"..token.."/deleteMessage?chat_id="..Chat_id.."&message_id="..msg_idd)
 send_inlin_key(Chat_id,Text,inline)
@@ -9240,7 +9240,7 @@ local idchci = database:get(bot_id.."VEctO:Filter:msg")
 local photo = DAata:match("^pito(.*)$")
 local Text =" ゠⁞تم اللغاء منعها بنجاح"
 inline = {
-{{text = ' ゠⁞ VEctO 𝖲𝗈𝗎𝗋𝖼𝖾   .',url='http://t.me/TEAM_VEctO'}},
+{{text = ' ゠⁞ VeCto 𝖲𝗈𝗎𝗋𝖼𝖾  .',url='http://t.me/TEAM_VEctO'}},
 }
 https.request("https://api.telegram.org/bot"..token.."/deleteMessage?chat_id="..Chat_id.."&message_id="..msg_idd)
 send_inlin_key(Chat_id,Text,inline)
@@ -9252,7 +9252,7 @@ local idchci = "-100"..idch
 local Sticker = DAata:match("^Sticker(.*)$"):gsub('chatid',''):gsub('chatid',''):gsub(idch,''):gsub('-100','')
 local Text =" ゠⁞تم اللغاء منعه بنجاح"
 inline = {
-{{text = ' ゠⁞ VEctO 𝖲𝗈𝗎𝗋𝖼𝖾   .',url='http://t.me/TEAM_VEctO'}},
+{{text = ' ゠⁞ VeCto 𝖲𝗈𝗎𝗋𝖼𝖾  .',url='http://t.me/TEAM_VEctO'}},
 }
 https.request("https://api.telegram.org/bot"..token.."/deleteMessage?chat_id="..Chat_id.."&message_id="..msg_idd)
 send_inlin_key(Chat_id,Text,inline)
@@ -9262,7 +9262,7 @@ if DAata and DAata:match("^delallSticker(.*)$") and Addictive(data) then
 local delallSticker = DAata:match("^delallSticker(.*)$")
 local Text =" ゠⁞تم اللغاء منع كل المتحركات"
 inline = {
-{{text = ' ゠⁞ VEctO 𝖲𝗈𝗎𝗋𝖼𝖾   .',url='http://t.me/TEAM_VEctO'}},
+{{text = ' ゠⁞ VeCto 𝖲𝗈𝗎𝗋𝖼𝖾  .',url='http://t.me/TEAM_VEctO'}},
 }
 https.request("https://api.telegram.org/bot"..token.."/deleteMessage?chat_id="..Chat_id.."&message_id="..msg_idd)
 send_inlin_key(Chat_id,Text,inline)
@@ -9275,7 +9275,7 @@ if DAata and DAata:match("^delallanimation(.*)$") and Addictive(data) then
 local delallmation = DAata:match("^delallanimation(.*)$")
 local Text =" ゠⁞تم اللغاء منع كل المتحركات"
 inline = {
-{{text = ' ゠⁞ VEctO 𝖲𝗈𝗎𝗋𝖼𝖾   .',url='http://t.me/TEAM_VEctO'}},
+{{text = ' ゠⁞ VeCto 𝖲𝗈𝗎𝗋𝖼𝖾  .',url='http://t.me/TEAM_VEctO'}},
 }
 https.request("https://api.telegram.org/bot"..token.."/deleteMessage?chat_id="..Chat_id.."&message_id="..msg_idd)
 send_inlin_key(Chat_id,Text,inline)
@@ -9288,7 +9288,7 @@ if DAata and DAata:match("^delallph(.*)$") and Addictive(data) then
 local delallph = DAata:match("^delallph(.*)$")
 local Text =" ゠⁞تم اللغاء منع كل الصور"
 inline = {
-{{text = ' ゠⁞ VEctO 𝖲𝗈𝗎𝗋𝖼𝖾   .',url='http://t.me/TEAM_VEctO'}},
+{{text = ' ゠⁞ VeCto 𝖲𝗈𝗎𝗋𝖼𝖾  .',url='http://t.me/TEAM_VEctO'}},
 }
 https.request("https://api.telegram.org/bot"..token.."/deleteMessage?chat_id="..Chat_id.."&message_id="..msg_idd)
 send_inlin_key(Chat_id,Text,inline)
