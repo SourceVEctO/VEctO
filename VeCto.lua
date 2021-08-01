@@ -4983,6 +4983,7 @@ else
 send(msg.chat_id_, msg.id_," ゠⁞لا توجد قوانين هنا")   
 end    
 end
+
 if text == "الاوامر المضافه" and Constructor(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
