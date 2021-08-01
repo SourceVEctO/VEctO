@@ -4991,6 +4991,11 @@ send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
 end
 end
 
+if text == ("عدد الميديا") or text == "الميديا" and cleaner(msg) then  
+local gmria = database:scard(bot_id.."VEctO:allM"..msg.chat_id_)  
+send(msg.chat_id_, msg.id_,"⌔︙عدد الميديا الموجود هو (* "..gmria.." *)")
+end
+
 if text == "الاوامر المضافه" and Constructor(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
