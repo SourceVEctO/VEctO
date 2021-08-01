@@ -4996,23 +4996,57 @@ local gmria = database:scard(bot_id.."VEctO:allM"..msg.chat_id_)
 send(msg.chat_id_, msg.id_," ゠⁞  عدد الميديا الموجود هو (* "..gmria.." *)")
 end
 
+if text == "@all" and BasicConstructor(msg) then
+if not database:get(bot_id..'Cick:all'..msg.chat_id_) then
+if database:get(bot_id.."VVVZVV:all:Time"..msg.chat_id_..':'..msg.sender_user_id_) then  
+return 
+send(msg.chat_id_, msg.id_,"*انتظر دقيقه من فضلك*")
+end
+database:setex(bot_id..'VVVZVV:all:Time'..msg.chat_id_..':'..msg.sender_user_id_,300,true)
+tdcli_function({ID="GetChannelFull",channel_id_ = msg.chat_id_:gsub('-100','')},function(argg,dataa) 
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = dataa.member_count_},function(ta,amir)
+x = 0
+tags = 0
+local list = amir.members_
+for k, v in pairs(list) do
+tdcli_function({ID="GetUser",user_id_ = v.user_id_},function(arg,data)
+if x == 5 or x == tags or k == 0 then
+tags = x + 5
+t = "#all"
+end
+x = x + 1
+tagname = data.first_name_
+tagname = tagname:gsub("]","")
+tagname = tagname:gsub("[[]","")
+t = t..", ["..tagname.."](tg://user?id="..v.user_id_..")"
+if x == 5 or x == tags or k == 0 then
+local Text = t:gsub('#all,','#all\n')
+sendText(msg.chat_id_,Text,0,'md')
+end
+end,nil)
+end
+end,nil)
+end,nil)
+end
+end
+
 if text == "ترتيب الاوامر" and Constructor(msg) then
-database:set(bot_id.."BLACKBOTSS:Set:Cmd:Group:New1"..msg.chat_id_..":ا","ايدي")
-database:sadd(bot_id.."BLACKBOTSS:List:Cmd:Group:New"..msg.chat_id_,"ا")
-database:set(bot_id.."BLACKBOTSS:Set:Cmd:Group:New1"..msg.chat_id_..":م","رفع مميز")
-database:sadd(bot_id.."BLACKBOTSS:List:Cmd:Group:New"..msg.chat_id_,"م")
-database:set(bot_id.."BLACKBOTSS:Set:Cmd:Group:New1"..msg.chat_id_..":اد","رفع ادمن")
-database:sadd(bot_id.."BLACKBOTSS:List:Cmd:Group:New"..msg.chat_id_,"اد")
-database:set(bot_id.."BLACKBOTSS:Set:Cmd:Group:New1"..msg.chat_id_..":مد","رفع مدير")
-database:sadd(bot_id.."BLACKBOTSS:List:Cmd:Group:New"..msg.chat_id_,"مد")
-database:set(bot_id.."BLACKBOTSS:Set:Cmd:Group:New1"..msg.chat_id_..":من","رفع منشئ")
-database:sadd(bot_id.."BLACKBOTSS:List:Cmd:Group:New"..msg.chat_id_,"من")
-database:set(bot_id.."BLACKBOTSS:Set:Cmd:Group:New1"..msg.chat_id_..":اس","رفع منشئ اساسي")
-database:sadd(bot_id.."BLACKBOTSS:List:Cmd:Group:New"..msg.chat_id_,"اس")
-database:set(bot_id.."BLACKBOTSS:Set:Cmd:Group:New1"..msg.chat_id_..":تعط","تعطيل الايدي بالصوره")
-database:sadd(bot_id.."BLACKBOTSS:List:Cmd:Group:New"..msg.chat_id_,"تعط")
-database:set(bot_id.."BLACKBOTSS:Set:Cmd:Group:New1"..msg.chat_id_..":تفع","تفعيل الايدي بالصوره")
-database:sadd(bot_id.."BLACKBOTSS:List:Cmd:Group:New"..msg.chat_id_,"تفع")
+database:set(bot_id.."VEctO:Set:Cmd:Group:New1"..msg.chat_id_..":ا","ايدي")
+database:sadd(bot_id.."VEctO:List:Cmd:Group:New"..msg.chat_id_,"ا")
+database:set(bot_id.."VEctO:Set:Cmd:Group:New1"..msg.chat_id_..":م","رفع مميز")
+database:sadd(bot_id.."VEctO:List:Cmd:Group:New"..msg.chat_id_,"م")
+database:set(bot_id.."VEctO:Set:Cmd:Group:New1"..msg.chat_id_..":اد","رفع ادمن")
+database:sadd(bot_id.."VEctO:List:Cmd:Group:New"..msg.chat_id_,"اد")
+database:set(bot_id.."VEctO:Set:Cmd:Group:New1"..msg.chat_id_..":مد","رفع مدير")
+database:sadd(bot_id.."VEctO:List:Cmd:Group:New"..msg.chat_id_,"مد")
+database:set(bot_id.."VEctO:Set:Cmd:Group:New1"..msg.chat_id_..":من","رفع منشئ")
+database:sadd(bot_id.."VEctO:List:Cmd:Group:New"..msg.chat_id_,"من")
+database:set(bot_id.."VEctO:Set:Cmd:Group:New1"..msg.chat_id_..":اس","رفع منشئ اساسي")
+database:sadd(bot_id.."VEctO:List:Cmd:Group:New"..msg.chat_id_,"اس")
+database:set(bot_id.."VEctO:Set:Cmd:Group:New1"..msg.chat_id_..":تعط","تعطيل الايدي بالصوره")
+database:sadd(bot_id.."VEctO:List:Cmd:Group:New"..msg.chat_id_,"تعط")
+database:set(bot_id.."VEctO:Set:Cmd:Group:New1"..msg.chat_id_..":تفع","تفعيل الايدي بالصوره")
+database:sadd(bot_id.."VEctO:List:Cmd:Group:New"..msg.chat_id_,"تفع")
 send(msg.chat_id_, msg.id_,"⌔︙تم ترتيب الاوامر بالشكل التالي ~\n- ايدي - ا .\n- مميز - م .\n- ادمن - اد .\n- مدير - مد . \n- منشى - من . \n- المنشئ الاساسي - اس  . \n- تعطيل الايدي بالصوره - تعط .\n- تفعيل الايدي بالصوره - تفع .")  
 end
 
