@@ -2722,6 +2722,25 @@ end
 send(msg.chat_id_, msg.id_, t)
 end 
 
+if text == ("كتم عام") and msg.reply_to_message_id_ and DevVECTOW(msg) then
+if AddChannel(msg.sender_user_id_) == false then
+local textchuser = database:get(bot_id..'text:ch:user')
+if textchuser then
+send(msg.chat_id_, msg.id_,'['..textchuser..']')
+else
+send(msg.chat_id_, msg.id_,'  ゠⁞ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت \n゠⁞ اشتࢪڪ هنا عمࢪي ['..database:get(bot_id..'add:ch:username')..']')
+end
+return false
+end
+function start_function(extra, result, success)
+if VECTOSudoBot(result.sender_user_id_) then
+send(msg.chat_id_, msg.id_,"゠⁞ لا تستطيع (كتم،طرد،حظر،تققيد) مطور السورس او الاساسي")
+return false 
+end
+if tonumber(result.sender_user_id_) == tonumber(bot_id) then  
+send(msg.chat_id_, msg.id_, " ゠⁞ لا تسطيع كتم البوت عام")
+return false 
+end
 if text == ("حظر عام") and tonumber(msg.reply_to_message_id_) ~= 0 and DevVEctO(msg) then
 function Function_VEctO(extra, result, success)
 if General_ban(result, result.chat_id_) == true then
