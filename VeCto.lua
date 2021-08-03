@@ -8245,7 +8245,7 @@ Text = [[
      
 [ ゠⁞  VeCto Developer .](http://t.me/mmssds)
 
-[ • 𝙶𝚛𝚘𝚄𝚙 𝚜𝚞𝚙𝚎𝚛 .](https://t.me/joinchat/4A8ChHhf855kYjEy)
+[ • 𝚂𝚞𝙿𝚎𝚛 𝚅𝚎𝙲𝚝𝚘 .](https://t.me/joinchat/57kgEPEjw7AyMTky)
 
      
 
