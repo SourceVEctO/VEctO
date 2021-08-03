@@ -8249,9 +8249,9 @@ Text = [[
 *- VeCto TeAM   .*
  — — — — — — — — — 
      
-[ ゠⁞  VeCto 𝖲𝗈𝗎𝗋𝖼𝖾  .](http://t.me/TEAM_VEctO)
+[ • 𝚅𝚎𝙲𝚝𝚘 𝖲𝗈𝗎𝗋𝖼𝖾  .](http://t.me/TEAM_VEctO)
      
-[ ゠⁞  VeCto Developer .](http://t.me/mmssds)
+[ • 𝚅𝚎𝙲𝚝𝚘 Developer .](http://t.me/mmssds)
 
 [ • 𝚂𝚞𝙿𝚎𝚛 𝚅𝚎𝙲𝚝𝚘 .](https://t.me/joinchat/57kgEPEjw7AyMTky)
 
