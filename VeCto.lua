@@ -5050,6 +5050,14 @@ database:sadd(bot_id.."VEctO:List:Cmd:Group:New"..msg.chat_id_,"تفع")
 send(msg.chat_id_, msg.id_,"⌔︙تم ترتيب الاوامر بالشكل التالي ~\n- ايدي - ا .\n- مميز - م .\n- ادمن - اد .\n- مدير - مد . \n- منشى - من . \n- المنشئ الاساسي - اس  . \n- تعطيل الايدي بالصوره - تعط .\n- تفعيل الايدي بالصوره - تفع .")  
 end
 
+if text == 'تنزيل جميع الرتب' and BasicConstructor(msg) then  
+database:del(bot_id..'Constructor'..msg.chat_id_)
+database:del(bot_id..'Manager'..msg.chat_id_)
+database:del(bot_id..'Mod:User'..msg.chat_id_)
+database:del(bot_id..'Special:User'..msg.chat_id_)
+send(msg.chat_id_, msg.id_, '\n *゠⁞ تم تنزيل الكل من الرتب الاتيه* \n*゠⁞ المميزين ، الادمنيه ، المدراء ، المنشئين* \n')
+end
+
 if text == "الاوامر المضافه" and Constructor(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
