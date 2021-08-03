@@ -4991,27 +4991,6 @@ send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
 end
 end
 
-if text == "تنظيف التعديل" and Manager(msg) then
-Msgs = {[0]=msg.id_}
-local Message = msg.id_
-for i=1,100 do
-Message = Message - 1048576
-Msgs[i] = Message
-end
-tdcli_function({ID = "GetMessages",chat_id_ = msg.chat_id_,message_ids_ = Msgs},function(arg,data)
-new = 0
-Msgs2 = {}
-for i=0 ,data.total_count_ do
-if data.messages_[i] and (not data.messages_[i].edit_date_ or data.messages_[i].edit_date_ ~= 0) then
-Msgs2[new] = data.messages_[i].id_
-new = new + 1
-end
-end
-DeleteMessage(msg.chat_id_,Msgs2)
-end,nil)  
-send(msg.chat_id_, msg.id_,'*゠⁞ تم تنظيف جميع الرسائل المعدله*')
-end
-
 if text == ("عدد الميديا") or text == "الميديا" and cleaner(msg) then  
 local gmria = database:scard(bot_id.."VEctO:allM"..msg.chat_id_)  
 send(msg.chat_id_, msg.id_," ゠⁞  عدد الميديا الموجود هو (* "..gmria.." *)")
