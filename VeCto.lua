@@ -5418,7 +5418,7 @@ database:del(bot_id.."VEctO:Coomds"..msg.chat_id_)
 end
 send(msg.chat_id_, msg.id_," ゠⁞ تم مسح الصلاحيات")
 end
-if text and text:match("^اضف صلاحيه (.*)$") and Addictive(msg) then 
+if text and text:match("^اضف صلاحيه(.*)$") and Addictive(msg) then 
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -5428,7 +5428,7 @@ send(msg.chat_id_, msg.id_,' ゠⁞ عـليك الاشـتࢪاك في قنـا
 end
 return false
 end
-ComdNew = text:match("^اضف صلاحيه (.*)$")
+ComdNew = text:match("^اضف صلاحيه(.*)$")
 database:set(bot_id.."VEctO:Comd:New:rt"..msg.chat_id_..msg.sender_user_id_,ComdNew)  
 database:sadd(bot_id.."VEctO:Coomds"..msg.chat_id_,ComdNew)  
 database:setex(bot_id.."VEctO:Comd:New"..msg.chat_id_..""..msg.sender_user_id_,200,true)  
@@ -8214,7 +8214,7 @@ send(msg.chat_id_, msg.id_,t)
 end
 if text == "متجر الملفات" or text == 'المتجر' then
 if DevVEctO(msg) then
-local Get_Files, res = https.request("https://raw.githubusercontent.com/VEctO/files_VEctO/master/getfile.json")
+local Get_Files, res = https.request("https://raw.githubusercontent.com/TEAMVEctO/files_VEctO/main/getfile.json")
 if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
@@ -8252,7 +8252,7 @@ t = "* ゠⁞  الملف -› {"..file.."}\n ゠⁞  تم تعطيله وحذف
 else
 t = "* ゠⁞  بالتاكيد تم تعطيل وحذف ملف -› {"..file.."} \n✓*"
 end
-local json_file, res = https.request("https://raw.githubusercontent.com/VEctO/files_VEctO/master/files_VEctO/"..file)
+local json_file, res = https.request("https://raw.githubusercontent.com/TEAMVEctO/files_VEctO/main/files_VEctO/"..file)
 if res == 200 then
 os.execute("rm -fr VeCto_Files/"..file)
 send(msg.chat_id_, msg.id_,t) 
@@ -8272,7 +8272,7 @@ t = "* ゠⁞  بالتاكيد تم تنزيل وتفعيل ملف -› {"..fil
 else
 t = "* ゠⁞  الملف -› {"..file.."}\n ゠⁞  تم تنزيله وتفعيله بنجاح \n*"
 end
-local json_file, res = https.request("https://raw.githubusercontent.com/VEctO/files_VEctO/master/files_VEctO/"..file)
+local json_file, res = https.request("https://raw.githubusercontent.com/TEAMVEctO/files_VEctO/main/files_VEctO/"..file)
 if res == 200 then
 local chek = io.open("VeCto_Files/"..file,'w+')
 chek:write(json_file)
