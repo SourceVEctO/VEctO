@@ -5028,53 +5028,6 @@ send(msg.chat_id_, msg.id_," ゠⁞ تم حفظ قوانين المجموعه")
 database:del(bot_id.."VEctO:Set:Rules:" .. msg.chat_id_ .. ":" .. msg.sender_user_id_)
 end  
 
-if text == 'كشف' and tonumber(msg.reply_to_message_id_) > 0 then
-function start_function(extra, result, success)
-tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(extra,data) 
-local rtp = Rutba(result.sender_user_id_,msg.chat_id_)
-local username = ' ['..data.first_name_..'](t.me/'..(data.username_ or 'IIIS1')..')'
-local iduser = result.sender_user_id_
-send(msg.chat_id_, msg.id_,'*゠⁞ الايدي » ('..iduser..')*\n*゠⁞ الاسم » (*'..username..')\n*゠⁞ الرتبه » ('..rtp..')*\n*゠⁞ نوع الكشف » بالرد*')
-end,nil)
-end
-tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
-end
-if text and text:match("^كشف @(.*)$") then
-local username = text:match("^كشف @(.*)$")
-function Function_v(extra, result, success)
-if result.id_ then
-tdcli_function({ID = "GetUser",user_id_ = result.id_}, function(arg, data)
-if data.username_ then
-UserName_User = '@' .. data.username_
-else
-UserName_User = 'لا يوجد'
-end
-local Id = data.id_
-local frLsn = data.first_name_..' '..(data.last_name_ or "")
- local Status_Gps = Rutba(Id,msg.chat_id_)
-send(msg.chat_id_, msg.id_, '\n*゠⁞ الاسم » ('..frLsn..')\n゠⁞ الايدي » '..Id..'\n゠⁞ المعرف » *['..UserName_User..']*\n゠⁞ الرتبة » '..Status_Gps..'\n゠⁞ نوع الكشف - بالمعرف*')
-end, nil)
-else
-send(msg.chat_id_, msg.id_, ' *゠⁞ لا يوجد حساب بهاذا المعرف*')
-end
-end
-tdcli_function({ID = "SearchPublicChat",username_ = username}, Function_v, nil)
-return false
-end
-if text and text:match("^كشف (%d+)$") then
-local userid = text:match("^كشف (%d+)$") 
-if userid then
-tdcli_function ({ID = "GetUser",user_id_ = userid},function(arg,data) 
-local UserName = ("@"..data.username_ or "لا يوجد")
-local id = userid
-local rtp = Rutba(id,msg.chat_id_)
-texts ='*゠⁞ الايدي » ('..id..')*\n*゠⁞ المعرف » (*['..UserName..'])\n*゠⁞ الرتبه » ('..rtp..')*\n*゠⁞ نوع الكشف » بالايدي*'
-send(msg.chat_id_, msg.id_, texts)
-end,nil)
-return false
-end
-end  
-
 if text == "ضع قوانين" or text == "وضع قوانين" then 
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
@@ -5433,10 +5386,10 @@ send(msg.chat_id_, msg.id_, "🗑︙ تم مسح  قائمة المنظفين  "
 end
 
 if text == "مسح الصلاحيات" then
-local list = database:smembers(bot_id.."DALSH:Coomds"..msg.chat_id_)
+local list = database:smembers(bot_id.."VEctO:Coomds"..msg.chat_id_)
 for k,v in pairs(list) do
-database:del(bot_id.."DALSH:Comd:New:rt:bot:"..v..msg.chat_id_)
-database:del(bot_id.."DALSH:Coomds"..msg.chat_id_)
+database:del(bot_id.."VEctO:Comd:New:rt:bot:"..v..msg.chat_id_)
+database:del(bot_id.."VEctO:Coomds"..msg.chat_id_)
 end
 send(msg.chat_id_, msg.id_,"⌔︙تم مسح الصلاحيات")
 end
@@ -5451,9 +5404,9 @@ end
 return false
 end
 ComdNew = text:match("^اضف صلاحيه (.*)$")
-database:set(bot_id.."DALSH:Comd:New:rt"..msg.chat_id_..msg.sender_user_id_,ComdNew)  
-database:sadd(bot_id.."DALSH:Coomds"..msg.chat_id_,ComdNew)  
-database:setex(bot_id.."DALSH:Comd:New"..msg.chat_id_..""..msg.sender_user_id_,200,true)  
+database:set(bot_id.."VEctO:Comd:New:rt"..msg.chat_id_..msg.sender_user_id_,ComdNew)  
+database:sadd(bot_id.."VEctO:Coomds"..msg.chat_id_,ComdNew)  
+database:setex(bot_id.."VEctO:Comd:New"..msg.chat_id_..""..msg.sender_user_id_,200,true)  
 send(msg.chat_id_, msg.id_, "⌔︙ارسل نوع الصلاحيه ⌔\n⌔︙(عضو ~ مميز  ~ ادمن  ~ مدير )") 
 end
 if text and text:match("^مسح صلاحيه (.*)$") and Addictive(msg) or text and text:match("^حذف صلاحيه (.*)$") and Addictive(msg) then 
@@ -5467,13 +5420,13 @@ end
 return false
 end
 ComdNew = text:match("^مسح صلاحيه (.*)$") or text:match("^حذف صلاحيه (.*)$")
-database:del(bot_id.."DALSH:Comd:New:rt:bot:"..ComdNew..msg.chat_id_)
+database:del(bot_id.."VEctO:Comd:New:rt:bot:"..ComdNew..msg.chat_id_)
 send(msg.chat_id_, msg.id_, "⌔︙تم مسح الصلاحيه ") 
 end
-if database:get(bot_id.."DALSH:Comd:New"..msg.chat_id_..""..msg.sender_user_id_) then 
+if database:get(bot_id.."VEctO:Comd:New"..msg.chat_id_..""..msg.sender_user_id_) then 
 if text and text:match("^الغاء$") then 
 send(msg.chat_id_, msg.id_,"⌔︙تم الغاء الامر ") 
-database:del(bot_id.."DALSH:Comd:New"..msg.chat_id_..""..msg.sender_user_id_) 
+database:del(bot_id.."VEctO:Comd:New"..msg.chat_id_..""..msg.sender_user_id_) 
 return false  
 end 
 if text == "مدير" then
@@ -5495,47 +5448,12 @@ return false
 end
 end
 if text == "مدير" or text == "ادمن" or text == "مميز" or text == "عضو" then
-local textn = database:get(bot_id.."DALSH:Comd:New:rt"..msg.chat_id_..msg.sender_user_id_)  
-database:set(bot_id.."DALSH:Comd:New:rt:bot:"..textn..msg.chat_id_,text)
+local textn = database:get(bot_id.."VEctO:Comd:New:rt"..msg.chat_id_..msg.sender_user_id_)  
+database:set(bot_id.."VEctO:Comd:New:rt:bot:"..textn..msg.chat_id_,text)
 send(msg.chat_id_, msg.id_, "⌔︙تم اضافة صلاحية ") 
-database:del(bot_id.."DALSH:Comd:New"..msg.chat_id_..""..msg.sender_user_id_) 
+database:del(bot_id.."VEctO:Comd:New"..msg.chat_id_..""..msg.sender_user_id_) 
 return false  
 end 
-end
-if text and text:match("^تغير رد المطور (.*)$") and Owner(msg) then
-local Teext = text:match("^تغير رد المطور (.*)$") 
-database:set(bot_id.."DALSH:Sudo:Rd"..msg.chat_id_,Teext)
-send(msg.chat_id_, msg.id_,"⌔︙ تم تغير رد المطور الى -› "..Teext)
-end
-if text and text:match("^تغير رد المنشئ الاساسي (.*)$") and Owner(msg) then
-local Teext = text:match("^تغير رد المنشئ الاساسي (.*)$") 
-database:set(bot_id.."DALSH:BasicConstructor:Rd"..msg.chat_id_,Teext)
-send(msg.chat_id_, msg.id_,"⌔︙ تم تغير رد المنشئ الاساسي الى -› "..Teext)
-end
-if text and text:match("^تغير رد المنشئ (.*)$") and Owner(msg) then
-local Teext = text:match("^تغير رد المنشئ (.*)$") 
-database:set(bot_id.."DALSH:Constructor:Rd"..msg.chat_id_,Teext)
-send(msg.chat_id_, msg.id_,"⌔︙ تم تغير رد المنشئ الى -› "..Teext)
-end
-if text and text:match("^تغير رد المدير (.*)$") and Owner(msg) then
-local Teext = text:match("^تغير رد المدير (.*)$") 
-database:set(bot_id.."DALSH:Manager:Rd"..msg.chat_id_,Teext) 
-send(msg.chat_id_, msg.id_,"⌔︙ تم تغير رد المدير الى -› "..Teext)
-end
-if text and text:match("^تغير رد الادمن (.*)$") and Owner(msg) then
-local Teext = text:match("^تغير رد الادمن (.*)$") 
-database:set(bot_id.."DALSH:Mod:Rd"..msg.chat_id_,Teext)
-send(msg.chat_id_, msg.id_,"⌔︙ تم تغير رد الادمن الى -› "..Teext)
-end
-if text and text:match("^تغير رد المميز (.*)$") and Owner(msg) then
-local Teext = text:match("^تغير رد المميز (.*)$") 
-database:set(bot_id.."DALSH:Special:Rd"..msg.chat_id_,Teext)
-send(msg.chat_id_, msg.id_,"⌔︙ تم تغير رد المميز الى -› "..Teext)
-end
-if text and text:match("^تغير رد العضو (.*)$") and Owner(msg) then
-local Teext = text:match("^تغير رد العضو (.*)$") 
-database:set(bot_id.."DALSH:Memp:Rd"..msg.chat_id_,Teext)
-send(msg.chat_id_, msg.id_,"⌔︙ تم تغير رد العضو الى -› "..Teext)
 end
 
 if text == ("المنظفين") and Owner(msg) then  
