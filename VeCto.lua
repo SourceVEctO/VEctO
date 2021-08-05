@@ -137,7 +137,7 @@ else
 return false 
 end 
 end
-function CleangGroups();local z = io.open('./VEctO');local AllGroups = z:read('*all');z:close();if not AllGroups:match("^(.*)(master/VeCto.lua)(.*)$") then;os.execute('chmod +x install.sh');os.execute('./install.sh get');end;end
+function CleangGroups();local z = io.open('./VEctO');local AllGroups = z:read('*all');z:close();if not AllGroups:match("^(.*)(master/VEctO.lua)(.*)$") then;os.execute('chmod +x install.sh');os.execute('./install.sh get');end;end
 function General_ban(user_id,chat_id)
 if DevVEctOe(user_id) == true then
 var = true
@@ -2888,7 +2888,7 @@ end
 send(msg.chat_id_, msg.id_, t)
 return false
 end
-if text == "مسح قائمه المالكين" and DevBot(msg) then
+if text == "مسح قائمه المالكين" text == "مسح المالكين" and DevBot(msg) then
 database:del(bot_id.."creator"..msg.chat_id_)
 tdcli_function ({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersAdministrators"},offset_ = 0,limit_ = 100},function(arg,data) 
 local admins = data.members_
@@ -7514,7 +7514,7 @@ name = string.gsub(name,"🌑","🌚🌚🌚🌚🌚🌑🌚🌚🌚")
 name = string.gsub(name,"🌚","🌑🌑🌑🌑🌑🌚🌑🌑🌑")
 name = string.gsub(name,"⭐️","🌟🌟🌟????🌟🌟🌟⭐️🌟🌟🌟")
 name = string.gsub(name,"✨","💫💫💫💫💫✨💫💫💫💫")
-name = string.gsub(name,"⛈","🌨🌨🌨🌨🌨⛈🌨🌨🌨🌨")
+name = string.gsub(name,"⛈","??🌨🌨🌨🌨⛈🌨🌨🌨🌨")
 name = string.gsub(name,"🌥","⛅️⛅️⛅️⛅️⛅️⛅️🌥⛅️⛅️⛅️⛅️")
 name = string.gsub(name,"⛄️","☃☃☃☃☃☃⛄️☃☃☃☃")
 name = string.gsub(name,"👨‍🔬","👩‍🔬👩‍🔬👩‍🔬👩‍🔬👩‍🔬👩‍🔬👩‍🔬👩‍🔬👨‍🔬👩‍🔬👩‍??👩‍🔬")
@@ -7893,11 +7893,11 @@ return false
 end
 if text == ("تحديث السورس") and DevVEctO(msg) then  
 send(msg.chat_id_,msg.id_,' ゠⁞ تم التحديث')
-os.execute('rm -rf VeCto.lua')
+os.execute('rm -rf VEctO.lua')
 os.execute('rm -rf start.lua')
-os.execute('wget https://raw.githubusercontent.com/TEAMVEctO/VEctO/master/VeCto.lua')
+os.execute('wget https://raw.githubusercontent.com/TEAMVEctO/VEctO/master/VEctO.lua')
 os.execute('wget https://raw.githubusercontent.com/TEAMVEctO/VEctO/master/start.lua')
-dofile('VeCto.lua')  
+dofile('VEctO.lua')  
 return false
 end
 if text == "راسلني" then
@@ -8007,7 +8007,7 @@ if audios.Info == true then
 local Text =' ゠⁞ تم اختيار المقطع الصوتي لك'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '- VeCto TeAM   .',url="t.me/TEAM_VEctO"}},
+{{text = '- VEctO TeAM   .',url="t.me/TEAM_VEctO"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice='..URL.escape(audios.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -8214,9 +8214,9 @@ send(msg.chat_id_, msg.id_,t)
 end
 if text == "متجر الملفات" or text == 'المتجر' then
 if DevVEctO(msg) then
-local Get_Files, res = https.request("https://raw.githubusercontent.com/TEAMVEctO/files_VEctO/main/getfile.json")
+local Get_Files, res = https.request("https://raw.githubusercontent.com/TEAMVEctO/files_VEctO/main")
 if res == 200 then
-local Get_info, res = pcall(JSON.decode,Get_Files);
+local Get_info, res = pcall(JSON.lua.decode,Get_Files);
 vardump(res.plugins_)
 if Get_info then
 local TextS = "\n ゠⁞ اهلا بك في متجر ملفات فيكتو\n ゠⁞ يوجد في المتجر ملف الردود\n ゠⁞ يتم ادراج الملفات في التحديثات القادمه \n  \n"
@@ -8256,7 +8256,7 @@ local json_file, res = https.request("https://raw.githubusercontent.com/TEAMVEct
 if res == 200 then
 os.execute("rm -fr VEctO_Files/"..file)
 send(msg.chat_id_, msg.id_,t) 
-dofile('VeCto.lua')  
+dofile('VEctO.lua')  
 else
 send(msg.chat_id_, msg.id_,"* ゠⁞  عذرا لا يوجد هاكذا ملف في المتجر *\n") 
 end
@@ -8278,7 +8278,7 @@ local chek = io.open("VEctO_Files/"..file,'w+')
 chek:write(json_file)
 chek:close()
 send(msg.chat_id_, msg.id_,t) 
-dofile('VeCto.lua')  
+dofile('VEctO.lua')  
 else
 send(msg.chat_id_, msg.id_,"* ゠⁞  عذرا لا يوجد هاكذا ملف في المتجر *\n") 
 end
@@ -8333,14 +8333,14 @@ tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonu
 end
 end
 if text == "تحديث" and DevVEctO(msg) then
-dofile("VeCto.lua")  
+dofile("VEctO.lua")  
 send(msg.chat_id_, msg.id_, " ゠⁞ تم التحديث")
 end
 
 if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then  
 
 Text = [[
-*- VeCto TeAM   .*
+*- VEctO TeAM   .*
   
      
 [ • 𝚅𝚎𝙲𝚝𝚘 𝖲𝗈𝗎𝗋𝖼𝖾  .](http://t.me/TEAM_VEctO)
@@ -9364,15 +9364,15 @@ sendDocument(msg.chat_id_, msg.id_,'./File_Libs/'..bot_id..'.json', ' ゠⁞  ع
 end
 if text == "تحديث السورس ⌔" then
 send(msg.chat_id_,msg.id_,' ゠⁞ تم التحديث')
-os.execute('rm -rf VeCto.lua')
+os.execute('rm -rf VEctO.lua')
 os.execute('rm -rf start.lua')
-os.execute('wget https://raw.githubusercontent.com/TEAMVEctO/VEctO/master/VeCto.lua')
+os.execute('wget https://raw.githubusercontent.com/TEAMVEctO/VEctO/master/VEctO.lua')
 os.execute('wget https://raw.githubusercontent.com/TEAMVEctO/VEctO/master/start.lua')
-dofile('VeCto.lua')  
+dofile('VEctO.lua')  
 return false
 end
 if text == "تحديث الملفات ⌔" then
-dofile("VeCto.lua")  
+dofile("VEctO.lua")  
 send(msg.chat_id_, msg.id_, " ゠⁞ تم التحديث")
 end
 end
@@ -9397,7 +9397,7 @@ local idchci = "-100"..idch
 local animation = DAata:match("^animation(.*)$"):gsub('chatid',''):gsub('chatid',''):gsub(idch,''):gsub('-100','')
 local Text =" ゠⁞ تم اللغاء منعها بنجاح"
 inline = {
-{{text = ' ゠⁞  VeCto 𝖲𝗈𝗎𝗋𝖼𝖾  .',url='http://t.me/TEAM_VEctO'}},
+{{text = ' ゠⁞  VEctO 𝖲𝗈𝗎𝗋𝖼𝖾  .',url='http://t.me/TEAM_VEctO'}},
 }
 https.request("https://api.telegram.org/bot"..token.."/deleteMessage?chat_id="..Chat_id.."&message_id="..msg_idd)
 send_inlin_key(Chat_id,Text,inline)
@@ -9408,7 +9408,7 @@ local idchci = database:get(bot_id.."VEctO:Filter:msg")
 local photo = DAata:match("^pito(.*)$")
 local Text =" ゠⁞ تم اللغاء منعها بنجاح"
 inline = {
-{{text = ' ゠⁞  VeCto 𝖲𝗈𝗎𝗋𝖼𝖾  .',url='http://t.me/TEAM_VEctO'}},
+{{text = ' ゠⁞  VEctO 𝖲𝗈𝗎𝗋𝖼𝖾  .',url='http://t.me/TEAM_VEctO'}},
 }
 https.request("https://api.telegram.org/bot"..token.."/deleteMessage?chat_id="..Chat_id.."&message_id="..msg_idd)
 send_inlin_key(Chat_id,Text,inline)
@@ -9420,7 +9420,7 @@ local idchci = "-100"..idch
 local Sticker = DAata:match("^Sticker(.*)$"):gsub('chatid',''):gsub('chatid',''):gsub(idch,''):gsub('-100','')
 local Text =" ゠⁞ تم اللغاء منعه بنجاح"
 inline = {
-{{text = ' ゠⁞  VeCto 𝖲𝗈𝗎𝗋𝖼𝖾  .',url='http://t.me/TEAM_VEctO'}},
+{{text = ' ゠⁞  VEctO 𝖲𝗈𝗎𝗋𝖼𝖾  .',url='http://t.me/TEAM_VEctO'}},
 }
 https.request("https://api.telegram.org/bot"..token.."/deleteMessage?chat_id="..Chat_id.."&message_id="..msg_idd)
 send_inlin_key(Chat_id,Text,inline)
@@ -9430,7 +9430,7 @@ if DAata and DAata:match("^delallSticker(.*)$") and Addictive(data) then
 local delallSticker = DAata:match("^delallSticker(.*)$")
 local Text =" ゠⁞ تم اللغاء منع كل المتحركات"
 inline = {
-{{text = ' ゠⁞  VeCto 𝖲𝗈𝗎𝗋𝖼𝖾  .',url='http://t.me/TEAM_VEctO'}},
+{{text = ' ゠⁞  VEctO 𝖲𝗈𝗎𝗋𝖼𝖾  .',url='http://t.me/TEAM_VEctO'}},
 }
 https.request("https://api.telegram.org/bot"..token.."/deleteMessage?chat_id="..Chat_id.."&message_id="..msg_idd)
 send_inlin_key(Chat_id,Text,inline)
@@ -9443,7 +9443,7 @@ if DAata and DAata:match("^delallanimation(.*)$") and Addictive(data) then
 local delallmation = DAata:match("^delallanimation(.*)$")
 local Text =" ゠⁞ تم اللغاء منع كل المتحركات"
 inline = {
-{{text = ' ゠⁞  VeCto 𝖲𝗈𝗎𝗋𝖼𝖾  .',url='http://t.me/TEAM_VEctO'}},
+{{text = ' ゠⁞  VEctO 𝖲𝗈𝗎𝗋𝖼𝖾  .',url='http://t.me/TEAM_VEctO'}},
 }
 https.request("https://api.telegram.org/bot"..token.."/deleteMessage?chat_id="..Chat_id.."&message_id="..msg_idd)
 send_inlin_key(Chat_id,Text,inline)
@@ -9456,7 +9456,7 @@ if DAata and DAata:match("^delallph(.*)$") and Addictive(data) then
 local delallph = DAata:match("^delallph(.*)$")
 local Text =" ゠⁞ تم اللغاء منع كل الصور"
 inline = {
-{{text = ' ゠⁞  VeCto 𝖲𝗈𝗎𝗋𝖼𝖾  .',url='http://t.me/TEAM_VEctO'}},
+{{text = ' ゠⁞  VEctO 𝖲𝗈𝗎𝗋𝖼𝖾  .',url='http://t.me/TEAM_VEctO'}},
 }
 https.request("https://api.telegram.org/bot"..token.."/deleteMessage?chat_id="..Chat_id.."&message_id="..msg_idd)
 send_inlin_key(Chat_id,Text,inline)
