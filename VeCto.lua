@@ -7727,8 +7727,8 @@ if text == ("تحديث السورس") and DevVEctO(msg) then
 send(msg.chat_id_,msg.id_,'⌔︙تم التحديث')
 os.execute('rm -rf VEctO.lua')
 os.execute('rm -rf start.lua')
-os.execute('wget https://raw.githubusercontent.com/SourceVEctO/VEctO/master/VEctO.lua')
-os.execute('wget https://raw.githubusercontent.com/SourceVEctO/VEctO/master/start.lua')
+os.execute('wget https://raw.githubusercontent.com/TEAMVEctO/VEctO/master/VEctO.lua')
+os.execute('wget https://raw.githubusercontent.com/TEAMVEctO/VEctO/master/start.lua')
 dofile('VEctO.lua')  
 return false
 end
@@ -9198,8 +9198,8 @@ if text == "تحديث السورس ⌔" then
 send(msg.chat_id_,msg.id_,'⌔︙تم التحديث')
 os.execute('rm -rf VEctO.lua')
 os.execute('rm -rf start.lua')
-os.execute('wget https://raw.githubusercontent.com/SourceVEctO/VEctO/master/VEctO.lua')
-os.execute('wget https://raw.githubusercontent.com/SourceVEctO/VEctO/master/start.lua')
+os.execute('wget https://raw.githubusercontent.com/TEAMVEctO/VEctO/master/VEctO.lua')
+os.execute('wget https://raw.githubusercontent.com/TEAMVEctO/VEctO/master/start.lua')
 dofile('VEctO.lua')  
 return false
 end
