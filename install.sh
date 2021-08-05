@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
-cd $HOME/VEctO
+cd $HOME/VeCto
 install() {
 rm -rf $HOME/.telegram-cli
 sudo chmod +x tg
-chmod +x VEctO
+chmod +x VeCto
 chmod +x ts
 ./ts
 }
 get() {
-rm -fr VEctO.lua
+rm -fr VeCto.lua
 rm -fr sudo.lua
-wget "https://raw.githubusercontent.com/SourceVEctO/VEctO/master/VEctO.lua"
+wget "https://raw.githubusercontent.com/SourceVeCto/VeCto/master/VeCto.lua"
 lua start.lua
 }
 installall(){
@@ -48,7 +48,7 @@ fi
 installall
 cd ..
 rm -rf luarocks*
-cd VEctO
+cd VeCto
 rm -rf luarocks*
 lua start.lua
 

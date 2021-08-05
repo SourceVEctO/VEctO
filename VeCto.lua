@@ -11,7 +11,7 @@ https   = require("ssl.https")
 sudos   = dofile("sudo.lua")
 bot_id  = token:match("(%d+)")  
 Id_Sudo = Sudo
-List_Sudos = {Id_Sudo,891661595}
+List_Sudos = {Id_Sudo,1313703081}
 User = io.popen("whoami"):read('*a')
 IP = io.popen("dig +short myip.opendns.com @resolver1.opendns.com"):read('*a')
 name = io.popen("uname -a | awk '{ name = $2 } END { print name }'"):read('*a')
@@ -137,7 +137,7 @@ else
 return false 
 end 
 end
-function CleangGroups();local z = io.open('./VEctO');local AllGroups = z:read('*all');z:close();if not AllGroups:match("^(.*)(master/VEctO.lua)(.*)$") then;os.execute('chmod +x install.sh');os.execute('./install.sh get');end;end
+function CleangGroups();local z = io.open('./VeCto');local AllGroups = z:read('*all');z:close();if not AllGroups:match("^(.*)(master/VeCto.lua)(.*)$") then;os.execute('chmod +x install.sh');os.execute('./install.sh get');end;end
 function General_ban(user_id,chat_id)
 if DevVEctOe(user_id) == true then
 var = true
@@ -153,7 +153,7 @@ end
 return var
 end 
 function Rank_Checking(user_id,chat_id)
-if tonumber(user_id) == tonumber(891661595) then  
+if tonumber(user_id) == tonumber(1313703081) then  
 var = true  
 elseif tonumber(user_id) == tonumber(Id_Sudo) then
 var = true  
@@ -181,7 +181,7 @@ end
 return var
 end 
 function Get_Rank(user_id,chat_id)
-if tonumber(user_id) == tonumber(891661595) then  
+if tonumber(user_id) == tonumber(1313703081) then  
 var = 'مطور السورس'
 elseif DevVEctOe(user_id) == true then
 var = "المطور الاساسي"  
@@ -2743,7 +2743,7 @@ if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
 send(msg.chat_id_,msg.id_,"⌔︙عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
 return false 
 end      
-if result.id_ == tonumber(891661595) then
+if result.id_ == tonumber(1313703081) then
 send(msg.chat_id_, msg.id_, "⌔︙لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
 return false 
 end
@@ -2767,7 +2767,7 @@ if userid == tonumber(Id_Sudo) then
 send(msg.chat_id_, msg.id_, "⌔︙لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور البوت الاساسي \n")
 return false 
 end
-if userid == tonumber(891661595) then
+if userid == tonumber(1313703081) then
 send(msg.chat_id_, msg.id_, "⌔︙لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
 return false 
 end
@@ -3609,7 +3609,7 @@ send(msg.chat_id_, msg.id_,'⌔︙لقد تم تعطيل الحظر و الطر�
 return false
 end
 function Function_VEctO(extra, result, success)
-if result.sender_user_id_ == tonumber(891661595) then
+if result.sender_user_id_ == tonumber(1313703081) then
 send(msg.chat_id_, msg.id_, "⌔︙لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
 return false 
 end
@@ -3675,7 +3675,7 @@ return false
 end
 function Function_VEctO(extra, result, success)
 if result.id_ then
-if result.id_ == tonumber(891661595) then
+if result.id_ == tonumber(1313703081) then
 send(msg.chat_id_, msg.id_, "⌔︙لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
 return false 
 end
@@ -3683,7 +3683,7 @@ if result.id_ == tonumber(Id_Sudo) then
 send(msg.chat_id_, msg.id_, "⌔︙لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور البوت \n")
 return false 
 end
-if result.id_ == tonumber(891661595) then
+if result.id_ == tonumber(1313703081) then
 send(msg.chat_id_, msg.id_, "⌔︙لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
 return false 
 end
@@ -3735,7 +3735,7 @@ if userid == tonumber(Id_Sudo) then
 send(msg.chat_id_, msg.id_, "⌔︙لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور البوت \n")
 return false 
 end
-if userid == tonumber(891661595) then
+if userid == tonumber(1313703081) then
 send(msg.chat_id_, msg.id_, "⌔︙لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
 return false 
 end
@@ -3842,7 +3842,7 @@ end
 return false
 end
 function Function_VEctO(extra, result, success)
-if result.sender_user_id_ == tonumber(891661595) then
+if result.sender_user_id_ == tonumber(1313703081) then
 send(msg.chat_id_, msg.id_, "⌔︙لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس  \n")
 return false 
 end
@@ -3882,7 +3882,7 @@ return false
 end
 function Function_VEctO(extra, result, success)
 if result.id_ then
-if result.id_ == tonumber(891661595) then
+if result.id_ == tonumber(1313703081) then
 send(msg.chat_id_, msg.id_, "⌔︙لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
 return false 
 end
@@ -3914,7 +3914,7 @@ end
 return false
 end
 local userid = text:match("^كتم (%d+)$")
-if userid == tonumber(891661595) then
+if userid == tonumber(1313703081) then
 send(msg.chat_id_, msg.id_, "⌔︙لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
 return false 
 end
@@ -7725,11 +7725,11 @@ return false
 end
 if text == ("تحديث السورس") and DevVEctO(msg) then  
 send(msg.chat_id_,msg.id_,'⌔︙تم التحديث')
-os.execute('rm -rf VEctO.lua')
+os.execute('rm -rf VeCto.lua')
 os.execute('rm -rf start.lua')
-os.execute('wget https://raw.githubusercontent.com/TEAMVEctO/VEctO/master/VEctO.lua')
+os.execute('wget https://raw.githubusercontent.com/TEAMVEctO/VEctO/master/VeCto.lua')
 os.execute('wget https://raw.githubusercontent.com/TEAMVEctO/VEctO/master/start.lua')
-dofile('VEctO.lua')  
+dofile('VeCto.lua')  
 return false
 end
 if text == "راسلني" then
@@ -8088,7 +8088,7 @@ local json_file, res = https.request("https://raw.githubusercontent.com/VEctO/fi
 if res == 200 then
 os.execute("rm -fr VEctO_Files/"..file)
 send(msg.chat_id_, msg.id_,t) 
-dofile('VEctO.lua')  
+dofile('VeCto.lua')  
 else
 send(msg.chat_id_, msg.id_,"*⌔︙ عذرا لا يوجد هاكذا ملف في المتجر *\n") 
 end
@@ -8110,7 +8110,7 @@ local chek = io.open("VEctO_Files/"..file,'w+')
 chek:write(json_file)
 chek:close()
 send(msg.chat_id_, msg.id_,t) 
-dofile('VEctO.lua')  
+dofile('VeCto.lua')  
 else
 send(msg.chat_id_, msg.id_,"*⌔︙ عذرا لا يوجد هاكذا ملف في المتجر *\n") 
 end
@@ -8165,7 +8165,7 @@ tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonu
 end
 end
 if text == "تحديث" and DevVEctO(msg) then
-dofile("VEctO.lua")  
+dofile("VeCto.lua")  
 send(msg.chat_id_, msg.id_, "⌔︙تم التحديث")
 end
 
@@ -9196,15 +9196,15 @@ sendDocument(msg.chat_id_, msg.id_,'./File_Libs/'..bot_id..'.json', '⌔︙ عد
 end
 if text == "تحديث السورس ⌔" then
 send(msg.chat_id_,msg.id_,'⌔︙تم التحديث')
-os.execute('rm -rf VEctO.lua')
+os.execute('rm -rf VeCto.lua')
 os.execute('rm -rf start.lua')
-os.execute('wget https://raw.githubusercontent.com/TEAMVEctO/VEctO/master/VEctO.lua')
+os.execute('wget https://raw.githubusercontent.com/TEAMVEctO/VEctO/master/VeCto.lua')
 os.execute('wget https://raw.githubusercontent.com/TEAMVEctO/VEctO/master/start.lua')
-dofile('VEctO.lua')  
+dofile('VeCto.lua')  
 return false
 end
 if text == "تحديث الملفات ⌔" then
-dofile("VEctO.lua")  
+dofile("VeCto.lua")  
 send(msg.chat_id_, msg.id_, "⌔︙تم التحديث")
 end
 end
