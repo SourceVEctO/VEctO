@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
-cd $HOME/VEctO
+cd $HOME/VeCto
 rm -rf $HOME/.telegram-cli
 install() {
 apt install dnsutils
 rm -rf $HOME/.telegram-cli
 sudo chmod +x tg
-chmod +x VEctO
+chmod +x VeCto
 chmod +x ts
 ./ts
 }
