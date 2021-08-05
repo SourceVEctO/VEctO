@@ -5410,6 +5410,7 @@ t = " ゠⁞ لا يوجد منظفين"
 end
 send(msg.chat_id_, msg.id_, t)
 end
+
 if text == "مسح الصلاحيات" then
 local list = database:smembers(bot_id.."VEctO:Coomds"..msg.chat_id_)
 for k,v in pairs(list) do
@@ -8216,7 +8217,7 @@ if text == "متجر الملفات" or text == 'المتجر' then
 if DevVEctO(msg) then
 local Get_Files, res = https.request("https://raw.githubusercontent.com/TEAMVEctO/files_VEctO/main")
 if res == 200 then
-local Get_info, res = pcall(JSON.lua.decode,Get_Files);
+local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
 if Get_info then
 local TextS = "\n ゠⁞ اهلا بك في متجر ملفات فيكتو\n ゠⁞ يوجد في المتجر ملف الردود\n ゠⁞ يتم ادراج الملفات في التحديثات القادمه \n  \n"
