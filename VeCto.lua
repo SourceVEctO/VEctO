@@ -7041,7 +7041,7 @@ local List = {
 • 𝙄𝘿 ➤ #id .
 ]]}
 local Text_Rand = List[math.random(#List)]
-database:set(bot_id.."KLISH:ID"..msg.chat_id_,Text_Rand)
+database:set(bot_id....msg.chat_id_,Text_Rand)
 send(msg.chat_id_, msg.id_,'*゠⁞ تم تغير الايدي ارسل ايدي لرؤيته*')
 end
 
