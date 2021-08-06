@@ -423,7 +423,7 @@ ID="InputMessageAudio",
 audio_ = GetInputFile(audio),
 duration_ = "",
 title_ = title or "",
-performer_ = "سورس كراند الرسمي",
+performer_ = "سورس فيكتو الرسمي",
 caption_ = caption or ""
 }},func or dl_cb,nil)
 end
@@ -5056,6 +5056,94 @@ send(msg.chat_id_, msg.id_, ktSJJJJ[ktbrok])
 
 end
 
+if text == "المالكين" and DevBot(msg) then
+local list = database:smembers(bot_id.."creator"..msg.chat_id_)
+t = "\n⌔︙قائمة مالكين المجموعه \n — — — — — — — — — \n"
+for k,v in pairs(list) do
+local username = database:get(bot_id.."User:Name" .. v)
+if username then
+t = t..""..k.."↬⌔︙ [@"..username.."]\n"
+else
+t = t..""..k.."- (`"..v.."`)\n"
+end
+end
+if #list == 0 then
+t = "*⌔︙لا يوجد مالكين*"
+end
+send(msg.chat_id_, msg.id_, t)
+return false
+end
+if text == "مسح قائمه المالكين" and DevBot(msg) then
+database:del(bot_id.."creator"..msg.chat_id_)
+tdcli_function ({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersAdministrators"},offset_ = 0,limit_ = 100},function(arg,data) 
+local admins = data.members_
+for i=0 , #admins do
+if data.members_[i].status_.ID == "ChatMemberStatusCreator" then
+database:sadd(bot_id.."creator"..msg.chat_id_,admins[i].user_id_)
+end 
+end  
+end,nil)
+send(msg.chat_id_, msg.id_, "*⌔︙تم مسح المالكين*")
+end
+if text == ("رفع مالك") and tonumber(msg.reply_to_message_id_) ~= 0 and DevBot(msg) then  
+function Function_VEctO(extra, result, success)
+database:sadd(bot_id.."creator"..msg.chat_id_, result.sender_user_id_)
+Reply_Status(msg,result.sender_user_id_,"reply","⌔︙تم ترقيته مالك")  
+end
+tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_VEctO, nil)
+return false
+end
+if text and text:match("^رفع مالك @(.*)$") and DevBot(msg) then  
+local username = text:match("^رفع مالك @(.*)$")
+function Function_VEctO(extra, result, success)
+if result.id_ then
+if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
+send(msg.chat_id_,msg.id_,"⌔︙عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+return false 
+end      
+database:sadd(bot_id.."creator"..msg.chat_id_, result.id_)
+Reply_Status(msg,result.id_,"reply","⌔︙تم ترقيته مالك")  
+else
+send(msg.chat_id_, msg.id_,"*⌔︙لا يوجد حساب بهاذا المعرف*")
+end
+end
+tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_VEctO, nil)
+return false
+end
+if text and text:match("^رفع مالك (%d+)$") and DevBot(msg) then  
+local userid = text:match("^رفع مالك (%d+)$") 
+database:sadd(bot_id.."creator"..msg.chat_id_, userid)
+Reply_Status(msg,userid,"reply","⌔︙تم ترقيته مالك")  
+return false
+end
+if text == ("تنزيل مالك") and tonumber(msg.reply_to_message_id_) ~= 0 and DevBot(msg) then  
+function Function_VEctO(extra, result, success)
+database:srem(bot_id.."creator"..msg.chat_id_, result.sender_user_id_)
+Reply_Status(msg,result.sender_user_id_,"reply","*⌔︙تم تنزيله من المالكين*")  
+end
+tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_VEctO, nil)
+return false
+end
+if text and text:match("^تنزيل مالك @(.*)$") and DevBot(msg) then  
+local username = text:match("^تنزيل مالك @(.*)$")
+function Function_VEctO(extra, result, success)
+if result.id_ then
+database:srem(bot_id.."creator"..msg.chat_id_, result.id_)
+Reply_Status(msg,result.id_,"reply","⌔︙تم تنزيله من المالكين")  
+else
+send(msg.chat_id_, msg.id_,"*⌔︙لا يوجد حساب بهاذا المعرف*")
+end
+end
+tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_VEctO, nil)
+return false
+end
+if text and text:match("^تنزيل مالك (%d+)$") and DevBot(msg) then  
+local userid = text:match("^تنزيل مالك (%d+)$") 
+database:srem(bot_id.."creator"..msg.chat_id_, userid)
+Reply_Status(msg,userid,"reply","*⌔︙تم تنزيله من المالكين*")  
+return false
+end
+
 if text == "الاوامر المضافه" and Constructor(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
@@ -6338,7 +6426,7 @@ database:set(bot_id.."VEctO:Left:Bot"..msg.chat_id_,true)
 send(msg.chat_id_, msg.id_, " ゠⁞ تم تعطيل مغادرة البوت") 
 return false 
 end
-if text == (database:get(bot_id.."VEctO:Name:Bot") or "كراند") then
+if text == (database:get(bot_id.."VEctO:Name:Bot") or "فيكتو") then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -6348,7 +6436,7 @@ send(msg.chat_id_, msg.id_,' ゠⁞ عـليك الاشـتࢪاك في قنـا
 end
 return false
 end
-Namebot = (database:get(bot_id.."VEctO:Name:Bot") or "كراند")
+Namebot = (database:get(bot_id.."VEctO:Name:Bot") or "فيكتو")
 local namebot = {
 "عمري فداك "..Namebot.. " كول حب ",
 "كول حبيبي ؟ اني "..Namebot,
@@ -6367,7 +6455,7 @@ return false
 end
 
 if text == "بوت" then
-Namebot = (database:get(bot_id.."VEctO:Name:Bot") or "كراند")
+Namebot = (database:get(bot_id.."VEctO:Name:Bot") or "فيكتو")
 send(msg.chat_id_, msg.id_,"اسمي القميل ["..Namebot.."] ") 
 end
 if text == "تغير اسم البوت" or text == "تغيير اسم البوت" or text == "حذف اسم البوت" then 
@@ -6972,78 +7060,6 @@ end
 end,nil)   
 end,nil)   
 end
-end
-
-if text == 'تغير الايدي' and Manager(msg) then 
-local List = {
-[[
-- ᴜѕᴇʀɴᴀᴍᴇ 𓄹𓄼 #id .
-- ʏᴏᴜʀ ɪᴅ 𓄹𓄼 #username  .
-- ᴍѕɢѕ 𓄹𓄼 #msgs .
-- ѕᴛᴀᴛѕ 𓄹𓄼 #stast .
-- ᴇᴅɪᴛ 𓄹𓄼 #game .
-]],
-[[
-➭- 𝒔𝒕𝒂𓂅 #stast 𓍯. 💕
-➮- 𝒖𝒔𝒆𝒓𓂅 #username 𓍯. 💕
-➭- 𝒎𝒔𝒈𝒆𓂅 #msgs 𓍯. 💕
-➭- 𝒊𝒅 𓂅 #id 𓍯. 💕
-]],
-[[
-⚕ 𓆰 𝑾𝒆𝒍𝒄𝒐𝒎𝒆 𝑻𝒐 𝑮𝒓𝒐𝒖𝒑 ★
-• 🖤 | 𝑼𝑬𝑺 : #username ‌‌‏⚚
-• 🖤 | 𝑺𝑻𝑨 : #stast 🧙🏻‍♂ ☥
-• 🖤 | 𝑰𝑫 : #id ‌‌‏♕
-• 🖤 | 𝑴𝑺𝑮 : #msgs 𓆊
-]],
-[[
-┌ 𝐔𝐒𝐄𝐑 𖤱 #username 𖦴 .
-├ 𝐌𝐒𝐆 𖤱 #msgs 𖦴 .
-├ 𝐒𝐓𝐀 𖤱 #stast 𖦴 .
-└ 𝐈𝐃 𖤱 #id 𖦴 .
-]],
-[[
-➼ : 𝐼𝐷 𖠀 #id . ♡
-➼ : 𝑈𝑆𝐸𝑅 𖠀 #username .♡
-➼ : 𝑀𝑆𝐺𝑆 𖠀 #msgs .♡
-➼ : 𝑆𝑇𝐴S𝑇 𖠀 #stast .♡ 
-➼ : 𝐸𝐷𝐼𝑇  𖠀 #edit .♡
-]],
-[[
-- ايديڪ  ⁞ #id 💘 ٬
-- يوزرڪ القميل ⁞ #username 💘 ٬
-- رسائلڪ  الطيفهہَ ⁞ #msgs 💘 ٬
-- رتبتڪ الحلوه ⁞ #stast  💘٬
-- سحڪاتڪ الفول ⁞ #edit 💘 ٬ 
-]],
-[[
-- 𝒊𝒅 ➺ #id 💗
-- 𝒖𝒔𝒆𝒓 ➺  #username 💗
-- 𝒎𝒔𝒈 ➺ #msgs 💗
-- 𝒔𝒕𝒂𝒕𝒆 ➺ #stast 💗
-- 𝒆𝒅I𝒕 ➺ #edit  💗
-]],
-[[
-☁️ . USERNAME . #username  💞🧸
-☁️ . STAST . #stast 💗🦄
-☁️ . ID . #id 🧘🏼‍♀💘
-☁️ . MSGS . #msgs ??👧🏻
-]],
-[[
-- 𓏬 𝐔𝐬𝐄𝐫 : #username 𓂅 .
-- 𓏬 𝐌𝐬𝐆  : #msgs 𓂅 .
-- 𓏬 𝐒𝐭𝐀 : #stast 𓂅 .
-- 𓏬 𝐈𝐃 : #id 𓂅 .
-]],
-[[
-• 𝙐𝙎𝙀𝙍𝙉𝘼𝙈𝙀 ➤ #username .
-• 𝙈𝙀𝙎𝙎𝘼𝙂𝙀𝙎 ➤ #msgs .
-• 𝙎𝙏𝘼𝙏𝙎 ➤ #stast .
-• 𝙄𝘿 ➤ #id .
-]]}
-local Text_Rand = List[math.random(#List)]
-database:set(bot_id.."KLASH:ID"..msg.chat_id_,Text_Rand)
-send(msg.chat_id_, msg.id_,'*゠⁞ تم تغير الايدي ارسل ايدي لرؤيته*')
 end
 
 if text == 'تعطيل التنظيف' and BasicConstructor(msg) then   
@@ -8196,7 +8212,7 @@ if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
 if Get_info then
-local TextS = "\n ゠⁞ اهلا بك في متجر ملفات كراند\n ゠⁞ يوجد في المتجر ملف الردود\n ゠⁞ يتم ادراج الملفات في التحديثات القادمه \n \n"
+local TextS = "\n ゠⁞ اهلا بك في متجر ملفات فيكتو\n ゠⁞ يوجد في المتجر ملف الردود\n ゠⁞ يتم ادراج الملفات في التحديثات القادمه \n \n"
 local TextE = "\n \n ゠⁞ تدل علامة (✔) الملف مفعل\n".." ゠⁞ تدل علامة (✖) الملف معطل\n"
 local NumFile = 0
 for name,Info in pairs(res.plugins_) do
@@ -9558,7 +9574,7 @@ if NewCmmd then
 data.message_.content_.text_ = (NewCmmd or data.message_.content_.text_)
 end
 end
-local Name_Bot = (database:get(bot_id.."VEctO:Name:Bot") or "كراند")
+local Name_Bot = (database:get(bot_id.."VEctO:Name:Bot") or "فيكتو")
 if not database:get(bot_id.."VEctO:Fun_Bots"..msg.chat_id_) then
 if text ==  ""..Name_Bot..' شنو رئيك بهاذا' and tonumber(msg.reply_to_message_id_) > 0 then     
 function FunBot(extra, result, success) 
