@@ -163,6 +163,8 @@ elseif database:sismember(bot_id.."DEV:Sudo:T", user_id) then
 var = true  
 elseif database:sismember(bot_id.."VEctO:Sudo:User", user_id) then
 var = true  
+elseif database:sismember(bot_id.."creator"..chat_id, user_id) then
+var = true 
 elseif database:sismember(bot_id.."VEctO:Basic:Constructor"..chat_id, user_id) then
 var = true                 
 elseif database:sismember(bot_id.."VEctO:Basic:Constructor"..chat_id, user_id) then
@@ -189,7 +191,8 @@ elseif tonumber(user_id) == tonumber(bot_id) then
 var = "البوت"
 elseif database:sismember(bot_id.."DEV:Sudo:T", user_id) then  var = "المطور الاساسي²"  
 elseif database:sismember(bot_id.."VEctO:Sudo:User", user_id) then
-var = database:get(bot_id.."VEctO:Sudo:Rd"..chat_id) or "المطور"  
+var = database:get(bot_id.."VEctO:Sudo:Rd"..chat_id) or "المطور" 
+elseif database:sismember(bot_id.."creator"..chat_id,user_id) then var = "المالك"
 elseif database:sismember(bot_id.."VEctO:Basic:Constructor"..chat_id, user_id) then
 var = database:get(bot_id.."VEctO:BasicConstructor:Rd"..chat_id) or "المنشئ اساسي"
 elseif database:sismember(bot_id.."VEctO:Constructor"..chat_id, user_id) then
