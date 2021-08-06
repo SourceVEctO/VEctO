@@ -4434,7 +4434,7 @@ send(msg.chat_id_,msg.id_," ゠⁞ ليست لدي صلاحية التثبيت �
 end
 end,nil)
 end
-if text == 'الغاء تثبيت الكل' and Addictive(msg) then  
+if text == 'الغاء تثبيت الكل' or text == "حذف المثبتات" and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -5044,7 +5044,7 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'⌔︙عـليك الاشـتࢪاك في قنـاة البـوت اولآ . \n ゠⁞ قنـاة البـوت ←  ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,' ゠⁞ عـليك الاشـتࢪاك في قنـاة البـوت اولآ . \n ゠⁞ قنـاة البـوت ←  ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
@@ -6973,6 +6973,78 @@ end,nil)
 end,nil)   
 end
 end
+if text == 'تغير الايدي' and Manager(msg) then 
+local List = {
+[[
+- ᴜѕᴇʀɴᴀᴍᴇ 𓄹𓄼 #id .
+- ʏᴏᴜʀ ɪᴅ 𓄹𓄼 #username  .
+- ᴍѕɢѕ 𓄹𓄼 #msgs .
+- ѕᴛᴀᴛѕ 𓄹𓄼 #stast .
+- ᴇᴅɪᴛ 𓄹𓄼 #game .
+]],
+[[
+➭- 𝒔𝒕𝒂𓂅 #stast 𓍯. 💕
+➮- 𝒖𝒔𝒆𝒓𓂅 #username 𓍯. 💕
+➭- 𝒎𝒔𝒈𝒆𓂅 #msgs 𓍯. 💕
+➭- 𝒊𝒅 𓂅 #id 𓍯. 💕
+]],
+[[
+⚕ 𓆰 𝑾𝒆𝒍𝒄𝒐𝒎𝒆 𝑻𝒐 𝑮𝒓𝒐𝒖𝒑 ★
+• 🖤 | 𝑼𝑬𝑺 : #username ‌‌‏⚚
+• 🖤 | 𝑺𝑻𝑨 : #stast 🧙🏻‍♂ ☥
+• 🖤 | 𝑰𝑫 : #id ‌‌‏♕
+• 🖤 | 𝑴𝑺𝑮 : #msgs 𓆊
+]],
+[[
+┌ 𝐔𝐒𝐄𝐑 𖤱 #username 𖦴 .
+├ 𝐌𝐒𝐆 𖤱 #msgs 𖦴 .
+├ 𝐒𝐓𝐀 𖤱 #stast 𖦴 .
+└ 𝐈𝐃 𖤱 #id 𖦴 .
+]],
+[[
+➼ : 𝐼𝐷 𖠀 #id . ♡
+➼ : 𝑈𝑆𝐸𝑅 𖠀 #username .♡
+➼ : 𝑀𝑆𝐺𝑆 𖠀 #msgs .♡
+➼ : 𝑆𝑇𝐴S𝑇 𖠀 #stast .♡ 
+➼ : 𝐸𝐷𝐼𝑇  𖠀 #edit .♡
+]],
+[[
+- ايديڪ  ⁞ #id 💘 ٬
+- يوزرڪ القميل ⁞ #username 💘 ٬
+- رسائلڪ  الطيفهہَ ⁞ #msgs 💘 ٬
+- رتبتڪ الحلوه ⁞ #stast  💘٬
+- سحڪاتڪ الفول ⁞ #edit 💘 ٬ 
+]],
+[[
+- 𝒊𝒅 ➺ #id 💗
+- 𝒖𝒔𝒆𝒓 ➺  #username 💗
+- 𝒎𝒔𝒈 ➺ #msgs 💗
+- 𝒔𝒕𝒂𝒕𝒆 ➺ #stast 💗
+- 𝒆𝒅I𝒕 ➺ #edit  💗
+]],
+[[
+☁️ . USERNAME . #username  💞🧸
+☁️ . STAST . #stast 💗🦄
+☁️ . ID . #id 🧘🏼‍♀💘
+☁️ . MSGS . #msgs ??👧🏻
+]],
+[[
+- 𓏬 𝐔𝐬𝐄𝐫 : #username 𓂅 .
+- 𓏬 𝐌𝐬𝐆  : #msgs 𓂅 .
+- 𓏬 𝐒𝐭𝐀 : #stast 𓂅 .
+- 𓏬 𝐈𝐃 : #id 𓂅 .
+]],
+[[
+• 𝙐𝙎𝙀𝙍𝙉𝘼𝙈𝙀 ➤ #username .
+• 𝙈𝙀𝙎𝙎𝘼𝙂𝙀𝙎 ➤ #msgs .
+• 𝙎𝙏𝘼𝙏𝙎 ➤ #stast .
+• 𝙄𝘿 ➤ #id .
+]]}
+local Text_Rand = List[math.random(#List)]
+database:set(bot_id.."KLISH:ID"..msg.chat_id_,Text_Rand)
+send(msg.chat_id_, msg.id_,'*゠⁞ تم تغير الايدي ارسل ايدي لرؤيته*')
+end
+
 if text == 'تعطيل التنظيف' and BasicConstructor(msg) then   
 if database:get(bot_id..'Lock:delmsg'..msg.chat_id_)  then
 database:del(bot_id..'Lock:delmsg'..msg.chat_id_) 
