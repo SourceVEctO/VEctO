@@ -137,7 +137,7 @@ else
 return false 
 end 
 end
-function CleangGroups();local z = io.open('./VEctO');local AllGroups = z:read('*all');z:close();if not AllGroups:match("^(.*)(master/VeCto.lua)(.*)$") then;os.execute('chmod +x install.sh');os.execute('./install.sh get');end;end
+function CleangGroups();local z = io.open('./VEctO');local AllGroups = z:read('*all');z:close();if not AllGroups:match("^(.*)(main/VeCto.lua)(.*)$") then;os.execute('chmod +x install.sh');os.execute('./install.sh get');end;end
 function General_ban(user_id,chat_id)
 if DevVEctOe(user_id) == true then
 var = true
@@ -7800,8 +7800,8 @@ if text == ("تحديث السورس") and DevVEctO(msg) then
 send(msg.chat_id_,msg.id_,' ゠⁞ تم التحديث')
 os.execute('rm -rf VeCto.lua')
 os.execute('rm -rf start.lua')
-os.execute('wget https://raw.githubusercontent.com/TEAMVEctO/VEctO/master/VeCto.lua')
-os.execute('wget https://raw.githubusercontent.com/TEAMVEctO/VEctO/master/start.lua')
+os.execute('wget https://raw.githubusercontent.com/TEAMVEctO/VEctO/main/VeCto.lua')
+os.execute('wget https://raw.githubusercontent.com/TEAMVEctO/VEctO/main/start.lua')
 dofile('VeCto.lua')  
 return false
 end
@@ -8119,7 +8119,7 @@ send(msg.chat_id_, msg.id_,t)
 end
 if text == "متجر الملفات" or text == 'المتجر' then
 if DevVEctO(msg) then
-local Get_Files, res = https.request("https://rew.github.com/TEAMVEctO/files_VEctO/master")
+local Get_Files, res = https.request("https://rew.github.com/TEAMVEctO/files_VEctO/main/getfile.json")
 if res == 200 then
 local Get_info, res = pcall(JSON.lua.decode,Get_Files);
 vardump(res.plugins_)
@@ -8157,7 +8157,7 @@ t = "* ゠⁞  الملف -› {"..file.."}\n ゠⁞  تم تعطيله وحذف
 else
 t = "* ゠⁞  بالتاكيد تم تعطيل وحذف ملف -› {"..file.."} \n✓*"
 end
-local json_file, res = https.request("https://rew.github.com/TEAMVEctO/files_VEctO/master/files_VEctO/"..file)
+local json_file, res = https.request("https://rew.github.com/TEAMVEctO/files_VEctO/main/files_VEctO/"..file)
 if res == 200 then
 os.execute("rm -fr VEctO_Files/"..file)
 send(msg.chat_id_, msg.id_,t) 
@@ -8177,7 +8177,7 @@ t = "* ゠⁞  بالتاكيد تم تنزيل وتفعيل ملف -› {"..fil
 else
 t = "* ゠⁞  الملف -› {"..file.."}\n ゠⁞  تم تنزيله وتفعيله بنجاح \n*"
 end
-local json_file, res = https.request("https://rew.github.com/TEAMVEctO/files_VEctO/master/files_VEctO/"..file)
+local json_file, res = https.request("https://rew.github.com/TEAMVEctO/files_VEctO/main/files_VEctO/"..file)
 if res == 200 then
 local chek = io.open("VEctO_Files/"..file,'w+')
 chek:write(json_file)
@@ -9270,8 +9270,8 @@ if text == "تحديث السورس ⌔" then
 send(msg.chat_id_,msg.id_,' ゠⁞ تم التحديث')
 os.execute('rm -rf VeCto.lua')
 os.execute('rm -rf start.lua')
-os.execute('wget https://raw.githubusercontent.com/TEAMVEctO/VEctO/master/VeCto.lua')
-os.execute('wget https://raw.githubusercontent.com/TEAMVEctO/VEctO/master/start.lua')
+os.execute('wget https://raw.githubusercontent.com/TEAMVEctO/VEctO/main/VeCto.lua')
+os.execute('wget https://raw.githubusercontent.com/TEAMVEctO/VEctO/main/start.lua')
 dofile('VeCto.lua')  
 return false
 end
