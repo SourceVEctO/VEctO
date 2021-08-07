@@ -7909,7 +7909,7 @@ data,res = https.request('https://black-source.tk/BlackTeAM/audios.php')
 if res == 200 then
 audios = json:decode(data)
 if audios.Info == true then
-local Text =' ゠⁞ تم اختيار المقطع الصوتي لك'
+local Text ='* ゠⁞ تم اختيار المقطع الصوتي لك*'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = '- VeCto TeAm .',url="t.me/TEAM_VEctO"}},
@@ -9277,7 +9277,7 @@ return false
 end
 if text == "تحديث الملفات ⌔" then
 dofile("VeCto.lua")  
-send(msg.chat_id_, msg.id_, " ゠⁞ تم التحديث")
+send(msg.chat_id_, msg.id_, "* ゠⁞ تم التحديث*")
 end
 end
 end --- Chat_Type = 'UserBot' 
@@ -9301,7 +9301,7 @@ local idchci = "-100"..idch
 local animation = DAata:match("^animation(.*)$"):gsub('chatid',''):gsub('chatid',''):gsub(idch,''):gsub('-100','')
 local Text =" ゠⁞ تم اللغاء منعها بنجاح"
 inline = {
-{{text = ' ゠⁞  VEctO 𝖲𝗈𝗎𝗋𝖼𝖾  .',url='http://t.me/TEAM_VEctO'}},
+{{text = ' ゠⁞  VeCto 𝖲𝗈𝗎𝗋𝖼𝖾  .',url='http://t.me/TEAM_VEctO'}},
 }
 https.request("https://api.telegram.org/bot"..token.."/deleteMessage?chat_id="..Chat_id.."&message_id="..msg_idd)
 send_inlin_key(Chat_id,Text,inline)
@@ -9312,7 +9312,7 @@ local idchci = database:get(bot_id.."VEctO:Filter:msg")
 local photo = DAata:match("^pito(.*)$")
 local Text =" ゠⁞ تم اللغاء منعها بنجاح"
 inline = {
-{{text = ' ゠⁞  VEctO 𝖲𝗈𝗎𝗋𝖼𝖾  .',url='http://t.me/TEAM_VEctO'}},
+{{text = ' ゠⁞  VeCto 𝖲𝗈𝗎𝗋𝖼𝖾  .',url='http://t.me/TEAM_VEctO'}},
 }
 https.request("https://api.telegram.org/bot"..token.."/deleteMessage?chat_id="..Chat_id.."&message_id="..msg_idd)
 send_inlin_key(Chat_id,Text,inline)
@@ -9324,7 +9324,7 @@ local idchci = "-100"..idch
 local Sticker = DAata:match("^Sticker(.*)$"):gsub('chatid',''):gsub('chatid',''):gsub(idch,''):gsub('-100','')
 local Text =" ゠⁞ تم اللغاء منعه بنجاح"
 inline = {
-{{text = ' ゠⁞  VEctO 𝖲𝗈𝗎𝗋𝖼𝖾  .',url='http://t.me/TEAM_VEctO'}},
+{{text = ' ゠⁞  VeCto 𝖲𝗈𝗎𝗋𝖼𝖾  .',url='http://t.me/TEAM_VEctO'}},
 }
 https.request("https://api.telegram.org/bot"..token.."/deleteMessage?chat_id="..Chat_id.."&message_id="..msg_idd)
 send_inlin_key(Chat_id,Text,inline)
@@ -9334,7 +9334,7 @@ if DAata and DAata:match("^delallSticker(.*)$") and Addictive(data) then
 local delallSticker = DAata:match("^delallSticker(.*)$")
 local Text =" ゠⁞ تم اللغاء منع كل المتحركات"
 inline = {
-{{text = ' ゠⁞  VEctO 𝖲𝗈𝗎𝗋𝖼𝖾  .',url='http://t.me/TEAM_VEctO'}},
+{{text = ' ゠⁞  VeCto 𝖲𝗈𝗎𝗋𝖼𝖾  .',url='http://t.me/TEAM_VEctO'}},
 }
 https.request("https://api.telegram.org/bot"..token.."/deleteMessage?chat_id="..Chat_id.."&message_id="..msg_idd)
 send_inlin_key(Chat_id,Text,inline)
@@ -9347,7 +9347,7 @@ if DAata and DAata:match("^delallanimation(.*)$") and Addictive(data) then
 local delallmation = DAata:match("^delallanimation(.*)$")
 local Text =" ゠⁞ تم اللغاء منع كل المتحركات"
 inline = {
-{{text = ' ゠⁞  VEctO 𝖲𝗈𝗎𝗋𝖼𝖾  .',url='http://t.me/TEAM_VEctO'}},
+{{text = ' ゠⁞  VeCto 𝖲𝗈𝗎𝗋𝖼𝖾  .',url='http://t.me/TEAM_VEctO'}},
 }
 https.request("https://api.telegram.org/bot"..token.."/deleteMessage?chat_id="..Chat_id.."&message_id="..msg_idd)
 send_inlin_key(Chat_id,Text,inline)
@@ -9360,7 +9360,7 @@ if DAata and DAata:match("^delallph(.*)$") and Addictive(data) then
 local delallph = DAata:match("^delallph(.*)$")
 local Text =" ゠⁞ تم اللغاء منع كل الصور"
 inline = {
-{{text = ' ゠⁞  VEctO 𝖲𝗈𝗎𝗋𝖼𝖾  .',url='http://t.me/TEAM_VEctO'}},
+{{text = ' ゠⁞  VeCto 𝖲𝗈𝗎𝗋𝖼𝖾  .',url='http://t.me/TEAM_VEctO'}},
 }
 https.request("https://api.telegram.org/bot"..token.."/deleteMessage?chat_id="..Chat_id.."&message_id="..msg_idd)
 send_inlin_key(Chat_id,Text,inline)
