@@ -87,8 +87,8 @@ RunTs:write([[
 cd $HOME/VEctO
 while(true) do
 rm -fr ../.telegram-cli
-screen -S VEctO -X kill
-screen -S VEctO ./VEctO
+screen -S VEctO-X kill
+screen -S VEctO./VEctO
 done
 ]])
 RunTs:close()
