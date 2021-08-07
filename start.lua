@@ -74,7 +74,7 @@ RunBot:write([[
 cd $HOME/VEctO
 token="]]..database:get(Server_Done.."Token_Write")..[["
 rm -fr VeCto.lua
-wget "https://raw.githubusercontent.com/SourceVEctO/VEctO/master/VeCto.lua"
+wget "https://raw.githubusercontent.com/TEAMVEctO/VEctO/master/VeCto.lua"
 while(true) do
 rm -fr ../.telegram-cli
 ./tg -s ./VeCto.lua -p PROFILE --bot=$token
