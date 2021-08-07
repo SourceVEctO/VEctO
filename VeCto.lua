@@ -5056,6 +5056,12 @@ send(msg.chat_id_, msg.id_, ktSJJJJ[ktbrok])
 
 end
 
+if text == 'هلو' then
+TextReply = 'هـلاوات يحات مـسيوو وايد💘😻'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+
 if text == "الاوامر المضافه" and Constructor(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
