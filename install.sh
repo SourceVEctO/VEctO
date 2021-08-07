@@ -8,9 +8,9 @@ chmod +x ts
 ./ts
 }
 get() {
-rm -fr VEctO.lua
+rm -fr VeCto.lua
 rm -fr sudo.lua
-wget "https://raw.githubusercontent.com/SourceVEctO/VEctO/master/VEctO.lua"
+wget "https://raw.githubusercontent.com/SourceVEctO/VEctO/master/VeCto.lua"
 lua start.lua
 }
 installall(){
