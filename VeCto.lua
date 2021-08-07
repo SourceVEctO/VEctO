@@ -5396,7 +5396,7 @@ send(msg.chat_id_, msg.id_,'['..TextReply..']')
 return false
 end
 
-if text == 'السيرفر' and SudoBot(msg) then 
+if text == 'السيرفر' and DevBot(msg) then 
 send(msg.chat_id_, msg.id_, io.popen([[
 linux_version=lsb_release -ds
 memUsedPrc=free -m | awk 'NR==2{printf "%sMB/%sMB {%.2f%}\n", $3,$2,$3*100/$2 }'
