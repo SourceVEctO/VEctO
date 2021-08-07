@@ -5056,6 +5056,96 @@ send(msg.chat_id_, msg.id_, ktSJJJJ[ktbrok])
 
 end
 
+if text and text == 'تفعيل وضع حسابي' and is_owner(msg.sender_user_id_, msg.chat_id_) and VEctO11(msg) then
+if not VEctOdx1:get(VEctO..'bot:pubgacuount'..msg.chat_id_) then
+VEctOdx(msg.chat_id_, msg.id_, 1,'\n ゠⁞  تم تفعيل وضع حسابي سابقا ،', 'md')  
+else
+VEctOdx(msg.chat_id_, msg.id_, 1,'\n ゠⁞  تم تفعيل وضع حسابي ،', 'md')
+VEctOdx1:del(VEctO..'bot:pubgacuount'..msg.chat_id_)
+end end
+if text and text == 'تعطيل وضع حسابي' and is_owner(msg.sender_user_id_, msg.chat_id_) and VEctO11(msg) then
+if VEctOdx1:get(VEctO..'bot:pubgacuount'..msg.chat_id_) then
+VEctOdx(msg.chat_id_, msg.id_, 1,'\n ゠⁞  تم تعطيل وضع حسابي سابقا ،', 'md') 
+else
+VEctOdx(msg.chat_id_, msg.id_, 1,'\n ゠⁞  تم تعطيل وضع حسابي ،', 'md')
+VEctOdx1:set(VEctO..'bot:pubgacuount'..msg.chat_id_,true)
+end end
+--     By Developer VEctO     -- 
+  if not VEctOdx1:get(VEctO..'bot:pubgacuount'..msg.chat_id_) then
+if (text and text == 'وضع حسابي') and VEctO11(msg) then
+VEctOdx(msg.chat_id_, msg.id_, 1,'\n ゠⁞  ارسل لي اسم حسابك ،  ', 'html')
+VEctOdx1:set(VEctO..'bot:n1'..msg.sender_user_id_..'','yes')
+return false end 
+local VEctO = VEctOdx1:get(VEctO..'bot:n1'..msg.sender_user_id_)
+if VEctO == 'yes' then
+if text:match("^(.*)$") then
+VEctOdx(msg.chat_id_, msg.id_, 1,'\n ゠⁞  تم حفظ الاسم . ✔️\n ゠⁞  ارسل ايدي حسابك ،\n  ', 'md')
+VEctOdx1:set(VEctO..'bot:n1'..msg.sender_user_id_..'','no')
+VEctOdx1:set(VEctO..'bot:name_acount'..msg.sender_user_id_, text)
+VEctOdx1:set(VEctO..'bot:n2'..msg.sender_user_id_ ,'yes')
+return false end
+end 
+local VEctO = VEctOdx1:get(VEctO..'bot:n2'..msg.sender_user_id_)
+if VEctO == 'yes' then
+if text:match("^(%d+)$") then
+VEctOdx1:set(VEctO..'bot:idacount'..msg.sender_user_id_, text)
+VEctOdx1:set(VEctO..'bot:n2'..msg.sender_user_id_, 'no')
+local aa = [[
+ ゠⁞  تم حفظ ايديك ✅
+ ゠⁞  ارسل لي تقييمك كمثال :- 
+
+- برونز 1 
+- كولد 2
+- بلاتينيوم 3
+- دايموند 4 
+- كراون 5 
+- ايس 
+- كونكر 
+]]
+VEctOdx(msg.chat_id_, msg.id_, 1, aa , 1, 'html')
+VEctOdx1:set(VEctO..'bot:n3'..msg.sender_user_id_, 'yes')
+return false 
+else 
+return false end
+end 
+local VEctO = VEctOdx1:get(VEctO..'bot:n3'..msg.sender_user_id_)
+if VEctO == 'yes' then
+if text:match("^برونز (%d+)$") or text:match("^كولد (%d+)$") or text:match("^بلاتينيوم (%d+)$") or text:match("^دايموند (%d+)$") or text:match("^كراون (%d+)$") or text:match("^ايس$") or text:match("^كونكر$") then
+VEctOdx1:set(VEctO..'bot:n3'..msg.sender_user_id_, 'no')
+VEctOdx(msg.chat_id_, msg.id_, 1,'\n ゠⁞  تم حفظ التقييم ،\n ゠⁞  تم حفظ حسابك بالبوت ،\n  ', 'md')
+VEctOdx1:set(VEctO..'bot:acctear'..msg.sender_user_id_, text)
+return false 
+else 
+VEctOdx(msg.chat_id_, msg.id_, 1,'\n ゠⁞  لم يتم حفظ التقييم يوجد خطأ ، ', 'html')
+return false end
+end
+--     By Developer VEctO     -- 
+if (text and text == 'مسح حسابي') and VEctO11(msg) then
+VEctOdx1:del(VEctO..'bot:idacount'..msg.sender_user_id_)
+VEctOdx1:del(VEctO..'bot:acctear'..msg.sender_user_id_)
+VEctOdx1:del(VEctO..'bot:name_acount'..msg.sender_user_id_)
+VEctOdx(msg.chat_id_, msg.id_, 1,'\n ゠⁞  تم مسح حسابك من البوت ، ✔️ ', 'html')
+end
+--     By Developer VEctO     -- 
+if (text and text == 'حسابي') and VEctO11(msg) then
+if VEctOdx1:get(VEctO..'bot:idacount'..msg.sender_user_id_)then
+local n = VEctOdx1:get(VEctO..'bot:idacount'..msg.sender_user_id_)
+local nn = VEctOdx1:get(VEctO..'bot:acctear'..msg.sender_user_id_)
+local nnn = VEctOdx1:get(VEctO..'bot:name_acount'..msg.sender_user_id_)
+local Texting = {
+'ككفو ورمبي ☹️💞',
+"تقييمك مصعده كمبره ؟ 😉💞",
+"تقيمك هذا وحدك جبته لْـۆ هكر وياك 🥱!",
+"طفي الهاك اخي طفي 🤥",
+"ليش متمسح ببجي مو احسلك 🤧",
+"شكبرك شكدك وهذا تقيمك مقتنع بي انته!!!",
+}
+local VEctO_send = Texting[math.random(#Texting)]
+VEctOdx(msg.chat_id_, msg.id_, 1,"\n ゠⁞  حسابك على الببجي ،\n ゠⁞  اسم حسابك ، {`"..nnn.."`}\n ゠⁞  ايدي حسابك ، {`"..n.."`}\n ゠⁞  تقييمك ، {`"..nn.."`}\n\n ゠⁞  {"..VEctO_send.."}", 1, 'md')
+else 
+VEctOdx(msg.chat_id_, msg.id_, 1,'\n ゠⁞  لم يتم حفظ حسابك بالبوت ، \n ゠⁞  ارسل { وضع حسابي } ليتم حفظه .\n ', 'html')
+end end end
+
 if text == "الاوامر المضافه" and Constructor(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
