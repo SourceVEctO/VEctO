@@ -5441,7 +5441,6 @@ send(msg.chat_id_, msg.id_, texts)
 end,nil)
 return false
 end
-end  
 
 if text == "الاوامر المضافه" and Constructor(msg) then
 if AddChannel(msg.sender_user_id_) == false then
