@@ -4574,16 +4574,16 @@ t = " ゠⁞ لا يوجد ميديا في المجموعه"
 end
 send(msg.chat_id_, msg.id_, t)
 end
-if text == ("عدد الميديا") and cleaner(msg) then  
+if text == ("عدد الميديا") or text == الميديا and cleaner(msg) then  
 local num = database:smembers(bot_id.."VEctO:allM"..msg.chat_id_)
 for k,v in pairs(num) do
 local numl = v
 if numl then
-l = " ゠⁞ عدد الميديا الموجود هو "..k
+l = "* ゠⁞ عدد الميديا الموجود هو *"..k
 end
 end
 if #num == 0 then
-l = " ゠⁞ لا يوجد ميديا في المجموعه"
+l = "* ゠⁞ لا يوجد ميديا في المجموعه*"
 end
 send(msg.chat_id_, msg.id_, l)
 end
