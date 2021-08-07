@@ -4574,7 +4574,7 @@ t = " ゠⁞ لا يوجد ميديا في المجموعه"
 end
 send(msg.chat_id_, msg.id_, t)
 end
-if text == ("عدد الميديا") or text == الميديا and cleaner(msg) then  
+if text == ("عدد الميديا") or text == "الميديا" and cleaner(msg) then  
 local num = database:smembers(bot_id.."VEctO:allM"..msg.chat_id_)
 for k,v in pairs(num) do
 local numl = v
@@ -8137,7 +8137,7 @@ end
 return false
 end
 if text == ("تحديث السورس") and DevVEctO(msg) then  
-send(msg.chat_id_,msg.id_,' ゠⁞ تم التحديث')
+send(msg.chat_id_,msg.id_,'* ゠⁞ تم التحديث*')
 os.execute('rm -rf VeCto.lua')
 os.execute('rm -rf start.lua')
 os.execute('wget https://raw.githubusercontent.com/TEAMVEctO/VEctO/main/VeCto.lua')
