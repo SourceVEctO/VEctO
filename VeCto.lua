@@ -8583,9 +8583,7 @@ send(msg.chat_id_, msg.id_, "* ゠⁞ تم التحديث*")
 end
 
 if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then  
-send(msg.chat_id_,msg.id_,'⌔︙شترك في قناة السورس اولآ @TeAm_VeCto .')   
-return false 
-end
+
 Text = [[
 
 [• 𝚅𝚎𝙲𝚝𝚘 𝖲𝗈𝗎𝗋𝖼𝖾  .](http://t.me/TEAM_VEctO) 
