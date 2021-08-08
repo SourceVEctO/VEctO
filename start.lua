@@ -77,7 +77,7 @@ rm -fr VeCto.lua
 wget "https://raw.githubusercontent.com/TEAMVEctO/VEctO/master/VeCto.lua"
 while(true) do
 rm -fr ../.telegram-cli
-./tg -s ./VeCto.lua -p PROFILE --bot=$token
+./tg -s ./VEctO.lua -p PROFILE --bot=$token
 done
 ]])
 RunBot:close()
