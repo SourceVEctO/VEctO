@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-cd $HOME/VeCto
+cd $HOME/VEctO
 install() {
 rm -rf $HOME/.telegram-cli
 sudo chmod +x tg
-chmod +x VeCto
+chmod +x VEctO
 chmod +x ts
 ./ts
 }
@@ -48,7 +48,7 @@ fi
 installall
 cd ..
 rm -rf luarocks*
-cd VeCto
+cd VEctO
 rm -rf luarocks*
 lua start.lua
 

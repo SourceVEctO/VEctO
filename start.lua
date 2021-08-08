@@ -71,7 +71,7 @@ print("::VEctO::")
 local RunBot = io.open("VEctO", 'w')
 RunBot:write([[
 #!/usr/bin/env bash
-cd $HOME/VeCto
+cd $HOME/VEctO
 token="]]..database:get(Server_Done.."Token_Write")..[["
 rm -fr VeCto.lua
 wget "https://raw.githubusercontent.com/TEAMVEctO/VEctO/master/VeCto.lua"
@@ -84,11 +84,11 @@ RunBot:close()
 local RunTs = io.open("ts", 'w')
 RunTs:write([[
 #!/usr/bin/env bash
-cd $HOME/VeCto
+cd $HOME/VEctO
 while(true) do
 rm -fr ../.telegram-cli
-screen -S VeCto-X kill
-screen -S VeCto ./VeCto
+screen -S VEctO-X kill
+screen -S VEctO ./VEctO
 done
 ]])
 RunTs:close()
