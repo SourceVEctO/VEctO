@@ -2546,7 +2546,7 @@ end
 send(msg.chat_id_, msg.id_, t)
 return false
 end
-if text == ("المطورين") and DevVECTOW(msg) then
+if text == ("المطورين") and DevVEctO(msg) then
 local list = database:smembers(bot_id..'Sudo:User')
 t = "\n *゠⁞ قائمة مطورين البوت* \n \n"
 for k,v in pairs(list) do
