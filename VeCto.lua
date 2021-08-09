@@ -5396,7 +5396,7 @@ send(msg.chat_id_, msg.id_,'['..TextReply..']')
 return false
 end
 
-if text == ("كتم عام") and msg.reply_to_message_id_ and DevVEctO(msg) then
+if text == ("كتم عام ") and msg.reply_to_message_id_ and DevVEctO(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -5426,8 +5426,8 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
 return false
 end
-if text and text:match("^كتم عام@(.*)$")  and DevVEctO(msg) then
-local username = text:match("^كتم عام@(.*)$") 
+if text and text:match("^كتم عام @(.*)$")  and DevVEctO(msg) then
+local username = text:match("^كتم عام @(.*)$") 
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -5463,8 +5463,8 @@ end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, start_function, nil)
 return false
 end
-if text and text:match("^كتم عام(%d+)$") and DevVEctO(msg) then
-local userid = text:match("^كتم عام(%d+)$")
+if text and text:match("^كتم عام (%d+)$") and DevVEctO(msg) then
+local userid = text:match("^كتم عام (%d+)$")
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -5496,7 +5496,7 @@ send(msg.chat_id_, msg.id_, usertext..status)
 end;end,nil)
 return false
 end
-if text == ("الغاء العام") and msg.reply_to_message_id_ and DevVEctO(msg) then
+if text == "الغاء العام" and msg.reply_to_message_id_ and DevVEctO(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
