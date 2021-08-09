@@ -2546,11 +2546,11 @@ end
 send(msg.chat_id_, msg.id_, t)
 return false
 end
-if text == ("المطورين") and DevVEctO(msg) then
-local list = database:smembers(bot_id.."VEctO:User")
-t = "\n ゠⁞ قائمة مطورين البوت \n \n"
+if text == ("المطورين") and DevVECTOW(msg) then
+local list = database:smembers(bot_id..'Sudo:User')
+t = "\n *゠⁞ قائمة مطورين البوت* \n \n"
 for k,v in pairs(list) do
-local username = database:get(bot_id.."VEctO:User:Name" .. v)
+local username = database:get(bot_id.."user:Name" .. v)
 if username then
 t = t..""..k.."- ([@"..username.."])\n"
 else
@@ -2558,7 +2558,7 @@ t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
-t = " ゠⁞ لا يوجد مطورين"
+t = " *゠⁞ لا يوجد مطورين*"
 end
 send(msg.chat_id_, msg.id_, t)
 end
