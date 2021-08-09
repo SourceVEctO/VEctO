@@ -2546,6 +2546,7 @@ end
 send(msg.chat_id_, msg.id_, t)
 return false
 end
+
 if text == ("المطورين") and DevVEctO(msg) then
 local list = database:smembers(bot_id..'Sudo:User')
 t = "\n *゠⁞ قائمة مطورين البوت* \n \n"
@@ -2562,6 +2563,7 @@ t = " *゠⁞ لا يوجد مطورين*"
 end
 send(msg.chat_id_, msg.id_, t)
 end
+
 if text == "المنشئين الاساسين" and DevBot(msg) then
 local list = database:smembers(bot_id.."VEctO:Basic:Constructor"..msg.chat_id_)
 t = "\n ゠⁞ قائمة المنشئين الاساسين \n \n"
