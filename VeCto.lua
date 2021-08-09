@@ -5397,9 +5397,16 @@ return false
 end
 
 if text == 'مطورسورس' or text == "مطور السورس" or text == "مطور سورس" then
-TextReply = '[ مطور السورس ](http://t.me/mmssds)'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
+
+Text = [[
+
+[ مطور السورس ](http://t.me/mmssd)
+
+
+
+
+]]
+send(msg.chat_id_, msg.id_,Text)
 end
 
 if text == "الاوامر المضافه" and Constructor(msg) then
