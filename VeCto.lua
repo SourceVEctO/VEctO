@@ -5396,25 +5396,6 @@ send(msg.chat_id_, msg.id_,'['..TextReply..']')
 return false
 end
 
-if text == "تفعيل غنيلي" and SudoBotCoSu(msg) then   
-if database:get(bot_id..'sing:for:me'..msg.chat_id_) then
-Text = ' *゠⁞ تم تفعيل امر غنيلي الان ارسل غنيلي*'
-database:del(bot_id..'sing:for:me'..msg.chat_id_)  
-else
-Text = ' *゠⁞ بالتاكيد تم تفعيل امر غنيلي تستطيع ارسال غنيلي*'
-end
-send(msg.chat_id_, msg.id_,Text) 
-end
-if text == "تعطيل غنيلي" and SudoBotCoSu(msg) then  
-if not database:get(bot_id..'sing:for:me'..msg.chat_id_) then
-database:set(bot_id..'sing:for:me'..msg.chat_id_,true)  
-Text = '\n *゠⁞ تم تعطيل امر غنيلي*'
-else
-Text = '\n *゠⁞ بالتاكيد تم تعطيل امر غنيلي*'
-end
-send(msg.chat_id_, msg.id_,Text) 
-end
-
 if text == "الاوامر المضافه" and Constructor(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
@@ -8264,14 +8245,14 @@ end
 end
 end
 if text == "غنيلي" then
-data,res = https.request('https://Black-source.tk/BlackTeAM/audios.php')
+data,res = https.request('https://vvvzvv.ml/amirVois/Teland.php')
 if res == 200 then
 audios = json:decode(data)
 if audios.Info == true then
-local Text ='*゠⁞ تم اختيار المقطع الصوتي لك*'
+local Text ='*⌯︙تم اختيار المقطع الصوتي لك*'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '- VeCto TeAM .',url="t.me/TeAM_VEctO"}},
+{{text = 'VeCto 𝑇𝐸𝐴𝑀.',url="t.mmeTeAm_vecto"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice='..URL.escape(audios.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
