@@ -678,7 +678,7 @@ function VEctO_Files(msg)
 for v in io.popen('ls VEctO_Files'):lines() do
 if v:match(".lua$") then
 plugin = dofile("VEctO_Files/"..v)
-if plugin.VEctO and msg 
+if plugin.VEctO and msg then
 pre_msg = plugin.VEctO(msg)
 end
 end
@@ -5053,7 +5053,6 @@ local ktSJJJJ = {
 }
 ktbrok = math.random(#ktSJJJJ)
 send(msg.chat_id_, msg.id_, ktSJJJJ[ktbrok]) 
-
 end
 
 if text == 'هلو' then
