@@ -8249,7 +8249,7 @@ data,res = https.request('https://Black-source.tk/BlackTeAM/audios.php')
 if res == 200 then
 audios = json:decode(data)
 if audios.Info == true then
-local Text ='゠⁞ تم اختيار المقطع الصوتي لك'
+local Text ='*゠⁞ تم اختيار المقطع الصوتي لك*'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = '- VeCto TeAM .',url="t.me/TeAM_VEctO"}},
