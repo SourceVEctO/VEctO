@@ -5396,6 +5396,12 @@ send(msg.chat_id_, msg.id_,'['..TextReply..']')
 return false
 end
 
+if text == 'مطورسورس' or text == "مطور السورس" or text == "مطور سورس" then
+TextReply = '[مطور السورس](http://t.me/mmssds)'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+
 if text == "الاوامر المضافه" and Constructor(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
