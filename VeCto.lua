@@ -8447,7 +8447,7 @@ end,nil)
 end
 end
 if text == 'الملفات' and DevVEctO(msg) then
-t = ' ゠⁞ جميع الملفات : \n \n'
+t = '* ゠⁞ جميع الملفات : \n \n*'
 i = 0
 for v in io.popen('ls VEctO_Files'):lines() do
 if v:match(".lua$") then
@@ -8464,8 +8464,8 @@ if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
 if Get_info then
-local TextS = "\n ゠⁞ اهلا بك في متجر ملفات فيكتو\n ゠⁞ يوجد في المتجر ملف الردود\n ゠⁞ يتم ادراج الملفات في التحديثات القادمه \n \n"
-local TextE = "\n \n ゠⁞ تدل علامة (✔) الملف مفعل\n".." ゠⁞ تدل علامة (✖) الملف معطل\n"
+local TextS = "*\n ゠⁞ اهلا بك في متجر ملفات فيكتو\n ゠⁞ يوجد في المتجر ملف الردود\n ゠⁞ يتم ادراج الملفات في التحديثات القادمه \n \n*"
+local TextE = "*\n \n ゠⁞ تدل علامة (✔) الملف مفعل\n".." ゠⁞ تدل علامة (✖) الملف معطل\n*"
 local NumFile = 0
 for name,Info in pairs(res.plugins_) do
 local Check_File_is_Found = io.open("VEctO_Files/"..name,"r")
@@ -9305,7 +9305,7 @@ send(msg.chat_id_, msg.id_,' ゠⁞ ارسل ايدي المطور الاساس�
 database:set(bot_id..'LACKBOTSS:Ed:DevBots',true) 
 end
 if text =='تغيير المطور الاساسي ⌔' and not VIP_DeV(msg) then
-send(msg.chat_id_, msg.id_,' ゠⁞ تسرسح')
+send(msg.chat_id_, msg.id_,'* ゠⁞ تسرسح*')
 end
 if database:get(bot_id.."LACKBOTSS:Ed:DevBots") then
 if text and text:match("^(%d+)$") then
