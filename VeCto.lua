@@ -2546,12 +2546,11 @@ end
 send(msg.chat_id_, msg.id_, t)
 return false
 end
-
 if text == ("المطورين") and DevVEctO(msg) then
-local list = database:smembers(bot_id..'Sudo:User')
-t = "\n *゠⁞ قائمة مطورين البوت* \n \n"
+local list = database:smembers(bot_id.."VEctO:Sudo:User")
+t = "\n゠⁞ قائمة مطورين البوت \n  \n"
 for k,v in pairs(list) do
-local username = database:get(bot_id.."user:Name" .. v)
+local username = database:get(bot_id.."VEctO:User:Name" .. v)
 if username then
 t = t..""..k.."- ([@"..username.."])\n"
 else
@@ -2559,11 +2558,10 @@ t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
-t = " *゠⁞ لا يوجد مطورين*"
+t = "゠⁞ لا يوجد مطورين"
 end
 send(msg.chat_id_, msg.id_, t)
 end
-
 if text == "المنشئين الاساسين" and DevBot(msg) then
 local list = database:smembers(bot_id.."VEctO:Basic:Constructor"..msg.chat_id_)
 t = "\n ゠⁞ قائمة المنشئين الاساسين \n \n"
@@ -8438,7 +8436,7 @@ File:write(t)
 File:close()
 sendDocument(msg.chat_id_, msg.id_,'./File_Libs/'..bot_id..'.json', ' ゠⁞  عدد مجموعات التي في البوت { '..#list..'}')
 end
-if text == 'المطور' or text == 'مطور' or text == 'المطورين' then
+if text == 'المطور' or text == 'مطور'  then
 local Text_Dev = database:get(bot_id..'VEctO:Text_Dev')
 if Text_Dev then 
 send(msg.chat_id_, msg.id_,Text_Dev)
