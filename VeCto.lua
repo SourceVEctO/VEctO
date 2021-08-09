@@ -5053,6 +5053,7 @@ local ktSJJJJ = {
 }
 ktbrok = math.random(#ktSJJJJ)
 send(msg.chat_id_, msg.id_, ktSJJJJ[ktbrok]) 
+
 end
 
 if text == 'هلو' then
