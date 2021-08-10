@@ -8163,11 +8163,11 @@ local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendmessage?chat_id=' .. msg.sender_user_id_ .. '&text=' .. URL.escape(sender))
 end
 if text == "تعطيل الزخرفه" and Owner(msg) then
-send(msg.chat_id_, msg.id_, '⌯ تم تعطيل الزخرفه')
+send(msg.chat_id_, msg.id_, '゠⁞ تم تعطيل الزخرفه')
 database:set(bot_id.."VEctO:zhrf_Bots"..msg.chat_id_,"close")
 end
 if text == "تفعيل الزخرفه" and Owner(msg) then
-send(msg.chat_id_, msg.id_,'⌯ تم تفعيل الزخرفه')
+send(msg.chat_id_, msg.id_,'゠⁞ تم تفعيل الزخرفه')
 database:set(bot_id.."VEctO:zhrf_Bots"..msg.chat_id_,"open")
 end
 if text and text:match("^زخرفه (.*)$") and database:get(bot_id.."VEctO:zhrf_Bots"..msg.chat_id_) == "open" then
@@ -8183,11 +8183,11 @@ end
 send(msg.chat_id_, msg.id_, t..'\n ゠⁞ اضغط على الاسم ليتم نسخه')
 end
 if text == "تعطيل الابراج" and Owner(msg) then
-send(msg.chat_id_, msg.id_, '⌯ تم تعطيل الابراج')
+send(msg.chat_id_, msg.id_, '゠⁞ تم تعطيل الابراج')
 database:set(bot_id.."VEctO:brj_Bots"..msg.chat_id_,"close")
 end
 if text == "تفعيل الابراج" and Owner(msg) then
-send(msg.chat_id_, msg.id_,'⌯ تم تفعيل الابراج')
+send(msg.chat_id_, msg.id_,'゠⁞ تم تفعيل الابراج')
 database:set(bot_id.."VEctO:brj_Bots"..msg.chat_id_,"open")
 end
 if text and text:match("^برج (.*)$") and database:get(bot_id.."VEctO:brj_Bots"..msg.chat_id_) == "open" then
@@ -8197,11 +8197,11 @@ br = JSON.decode(gk)
 send(msg.chat_id_, msg.id_, br.ok.hso)
 end
 if text == "تعطيل حساب العمر" and Owner(msg) then
-send(msg.chat_id_, msg.id_, '⌯ تم تعطيل حساب العمر')
+send(msg.chat_id_, msg.id_, '゠⁞ تم تعطيل حساب العمر')
 database:set(bot_id.."VEctO:age_Bots"..msg.chat_id_,"close")
 end
 if text == "تفعيل حساب العمر" and Owner(msg) then
-send(msg.chat_id_, msg.id_,'⌯ تم تفعيل حساب العمر')
+send(msg.chat_id_, msg.id_,'゠⁞ تم تفعيل حساب العمر')
 database:set(bot_id.."VEctO:age_Bots"..msg.chat_id_,"open")
 end
 if text and text:match("^احسب (.*)$") and database:get(bot_id.."VEctO:age_Bots"..msg.chat_id_) == "open" then
@@ -8211,11 +8211,11 @@ ag = JSON.decode(ge)
 send(msg.chat_id_, msg.id_, ag.ok.hso)
 end
 if text == "تعطيل الانستا" and Owner(msg) then
-send(msg.chat_id_, msg.id_, '⌯ تم تعطيل الانستا')
+send(msg.chat_id_, msg.id_, '゠⁞ تم تعطيل الانستا')
 database:set(bot_id.."VEctO:insta_bot"..msg.chat_id_,"close")
 end
 if text == "تفعيل الانستا" and Owner(msg) then
-send(msg.chat_id_, msg.id_,'⌯ تم تفعيل الانستا')
+send(msg.chat_id_, msg.id_,'゠⁞ تم تفعيل الانستا')
 database:set(bot_id.."VEctO:insta_bot"..msg.chat_id_,"open")
 end
 if text and text:match("^معلومات (.*)$") and database:get(bot_id.."VEctO:insta_bot"..msg.chat_id_) == "open" then
@@ -8230,11 +8230,11 @@ end
 end
 end
 if text == "تعطيل الافلام" and Owner(msg) then
-send(msg.chat_id_, msg.id_, '⌯ تم تعطيل الافلام')
+send(msg.chat_id_, msg.id_, '゠⁞ تم تعطيل الافلام')
 database:set(bot_id.."VEctO:movie_bot"..msg.chat_id_,"close")
 end
 if text == "تفعيل الافلام" and Owner(msg) then
-send(msg.chat_id_, msg.id_,'⌯ تم تفعيل الافلام')
+send(msg.chat_id_, msg.id_,'゠⁞ تم تفعيل الافلام')
 database:set(bot_id.."VEctO:movie_bot"..msg.chat_id_,"open")
 end
 
@@ -8595,10 +8595,10 @@ end
 
 if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then  
 
-Text = "ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄʀ 𝐯𝐞𝐜𝐭𝐨 \n\n[⌯  𝐯𝐞𝐜𝐭𝐨 ᴄʜᴀɴɴᴇʟ](http://t.me/team_vecto)\n\n[⌯  ɪɴғᴏ sᴏᴜʀᴄᴇ](http://t.me/tools_vecto)\n\n[⌯  𝐯𝐞𝐜𝐭𝐨 ᴅᴇᴠᴇʟᴏᴘᴇʀ](http://t.me/mmssds)\n\n[⌯  ʙᴏᴛ 𝐯𝐞𝐜𝐭𝐨](http://t.mmeTOWS11bot)"
+Text = "ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄʀ 𝐯𝐞𝐜𝐭𝐨 \n\n[゠⁞  𝐯𝐞𝐜𝐭𝐨 ᴄʜᴀɴɴᴇʟ](http://t.me/team_vecto)\n\n[゠⁞  ɪɴғᴏ sᴏᴜʀᴄᴇ](http://t.me/tools_vecto)\n\n[゠⁞  𝐯𝐞𝐜𝐭𝐨 ᴅᴇᴠᴇʟᴏᴘᴇʀ](http://t.me/mmssds)\n\n[゠⁞  ʙᴏᴛ 𝐯𝐞𝐜𝐭𝐨](http://t.mmeTOWS11bot)"
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '⌯ sᴏᴜʀᴄʀ 𝐯𝐞𝐜𝐭𝐨',url="t.me/TEAM_VECTO/3"}},
+{{text = '゠⁞ sᴏᴜʀᴄʀ 𝐯𝐞𝐜𝐭𝐨',url="t.me/TEAM_VECTO/3"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/TEAM_VECTO&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
