@@ -5398,8 +5398,7 @@ end
 
 if text == 'مطورسورس' or text == "مطور السورس" or text == "مطور سورس" then 
 
-Text =  "┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-゠⁞  Name : 𝗗ِ𝗮ٌِ𝗥ً𝗞 .
+Text =  "゠⁞  Name : 𝗗ِ𝗮ٌِ𝗥ً𝗞 .
 ゠⁞ Dev User : @mmssds"  
 keyboard = {} 
 keyboard.inline_keyboard = {
