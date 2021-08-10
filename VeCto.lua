@@ -5408,7 +5408,31 @@ local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/mmssds&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 
-if text == "رابط حذف" or text == "رابط الحذف" or text == "اريد رابط الحذف" or  text == "شمرلي رابط الحذف" or text == "اريد رابط حذف" then local inline = {{{text="اضغط هنا",url="https://telegram.org/deactivate"}}} SendInline(msg.chat_id_,'゠⁞ اضغط للحصول على الرابط',nil,inline) return false end
+if text == 'رابط الحذف' or text == 'رابط حذف' then
+t =[[
+*رابط الحذف في جميع مواقع التواصل ゠⁞ 
+فكر قبل لا تتسرع وتروح*
+ٴ*•━━━━━━ 𝙑𝙀 ━━━━━━━•*ٴ
+ *゠⁞  رابط حذف*  [Telegram](https://my.telegram.org/auth?to=delete) ܁
+ *゠⁞  رابط حذف* [instagram](https://www.instagram.com/accounts/login/?next=/accounts/remove/request/permanent/) ܁
+ *゠⁞  رابط حذف* [Facebook](https://www.facebook.com/help/deleteaccount) ܁
+ *゠⁞  رابط حذف* [Snspchat](https://accounts.snapchat.com/accounts/login?continue=https%3A%2F%2Faccounts.snapchat.com%2Faccounts%2Fdeleteaccount) ܁
+]]
+send(msg.chat_id_, msg.id_,t) 
+return false
+end
+
+if text and text:match('^الحساب (%d+)$') then
+local id = text:match('^الحساب (%d+)$')
+local text = 'اضغط لمشاهده الحساب'
+tdcli_function ({ID="SendMessage", chat_id_=msg.chat_id_, reply_to_message_id_=msg.id_, disable_notification_=0, from_background_=1, reply_markup_=nil, input_message_content_={ID="InputMessageText", text_=text, disable_web_page_preview_=1, clear_draft_=0, entities_={[0] = {ID="MessageEntityMentionName", offset_=0, length_=19, user_id_=id}}}}, dl_cb, nil)
+end
+local function oChat(chat_id,cb)
+tdcli_function ({
+ID = "OpenChat",
+chat_id_ = chat_id
+}, cb, nil)
+end
 
 if text == "الاوامر المضافه" and Constructor(msg) then
 if AddChannel(msg.sender_user_id_) == false then
