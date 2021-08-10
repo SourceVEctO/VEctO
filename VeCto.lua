@@ -8687,7 +8687,12 @@ Text = [[
 * ゠⁞  م4 -› لعرض اوامر المنشئين*
 * ゠⁞  م5 -› لعرض اوامر المطورين*
  
-[ ゠⁞ Ch Source](t.me/TEAM_VEctO)
+[ ゠⁞ Ch Source](t.me/TEAM_VEctO) 
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '⓵', callback_data="/help1"},{text = '⓶', callback_data="/help2"},{text = '⓷', callback_data="/help3"}},
+{{text = '⓸', callback_data="/help4"},{text = '⓹', callback_data="/help5"}},
+
 ]]
 send(msg.chat_id_, msg.id_,Text)
 return false
