@@ -5401,8 +5401,7 @@ if text == 'مطورسورس' or text == "مطور السورس" or text == "م�
 
 Text = "\n┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉\n
 ⌔︙Dev Name : 𝗗ِ𝗮ٌِ𝗥ً𝗞 .
-⌔︙Dev User : @mmssds
-\n┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉\n"  
+⌔︙Dev User : @mmssds"  
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = '゠⁞ مبرمج السورس',url="t.me/mmssds"}},
