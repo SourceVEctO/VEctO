@@ -8212,7 +8212,7 @@ ge = https.request('https://black-source.tk/BlackTeAM/Calculateage.php?age='..UR
 ag = JSON.decode(ge)
 send(msg.chat_id_, msg.id_, ag.ok.hso)
 end
-text == "تعطيل الانستا" and Owner(msg) then
+ if text == "تعطيل الانستا" and Owner(msg) then
 send(msg.chat_id_, msg.id_, '⌯ تم تعطيل الانستا')
 database:set(bot_id.."VEctO:insta_bot"..msg.chat_id_,"close")
 end
