@@ -5422,6 +5422,7 @@ send(msg.chat_id_, msg.id_,t)
 return false
 end
 
+
 if text and text:match('^الحساب (%d+)$') then
 local id = text:match('^الحساب (%d+)$')
 local text = 'اضغط لمشاهده الحساب'
@@ -5433,6 +5434,7 @@ ID = "OpenChat",
 chat_id_ = chat_id
 }, cb, nil)
 end
+
 
 
 if text == "الاوامر المضافه" and Constructor(msg) then
