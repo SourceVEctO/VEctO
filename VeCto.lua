@@ -5396,7 +5396,12 @@ send(msg.chat_id_, msg.id_,'['..TextReply..']')
 return false
 end
 
-if text == 'مطورسورس' or text == "مطور السورس" or text == "مطور سورس" then
+if text == 'مطورسورس' or text == "مطور السورس" or text == "مطور سورس" then 
+
+Text = "┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+゠⁞ Dev Name : 𝗗ِ𝗮ٌِ𝗥ً𝗞 .
+゠⁞ Dev User : @mmssds
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉"
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = '゠⁞ مبرمج السورس',url="t.me/mmssds"}},
