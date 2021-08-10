@@ -8185,44 +8185,44 @@ end
 send(msg.chat_id_, msg.id_, t..'\n ゠⁞ اضغط على الاسم ليتم نسخه')
 end
 if text == "تعطيل الابراج" and Owner(msg) then
-send(msg.chat_id_, msg.id_, '゠⁞ تم تعطيل الابراج')
+send(msg.chat_id_, msg.id_, '⌯ تم تعطيل الابراج')
 database:set(bot_id.."VEctO:brj_Bots"..msg.chat_id_,"close")
 end
 if text == "تفعيل الابراج" and Owner(msg) then
-send(msg.chat_id_, msg.id_,'゠⁞ تم تفعيل الابراج')
+send(msg.chat_id_, msg.id_,'⌯ تم تفعيل الابراج')
 database:set(bot_id.."VEctO:brj_Bots"..msg.chat_id_,"open")
 end
 if text and text:match("^برج (.*)$") and database:get(bot_id.."VEctO:brj_Bots"..msg.chat_id_) == "open" then
 local Textbrj = text:match("^برج (.*)$")
-gk = https.request('https://VEctO-source.tk/VEctO TeAm/Horoscopes.php?br='..URL.escape(Textbrj)..'')
+gk = https.request('https://black-source.tk/BlackTeAM/Horoscopes.php?br='..URL.escape(Textbrj)..'')
 br = JSON.decode(gk)
 send(msg.chat_id_, msg.id_, br.ok.hso)
 end
 if text == "تعطيل حساب العمر" and Owner(msg) then
-send(msg.chat_id_, msg.id_, '゠⁞ تم تعطيل حساب العمر')
+send(msg.chat_id_, msg.id_, '⌯ تم تعطيل حساب العمر')
 database:set(bot_id.."VEctO:age_Bots"..msg.chat_id_,"close")
 end
 if text == "تفعيل حساب العمر" and Owner(msg) then
-send(msg.chat_id_, msg.id_,'゠⁞ تم تفعيل حساب العمر')
+send(msg.chat_id_, msg.id_,'⌯ تم تفعيل حساب العمر')
 database:set(bot_id.."VEctO:age_Bots"..msg.chat_id_,"open")
 end
 if text and text:match("^احسب (.*)$") and database:get(bot_id.."VEctO:age_Bots"..msg.chat_id_) == "open" then
 local Textage = text:match("^احسب (.*)$")
-ge = https.request('https://VEctO-source.tk/VEctO TeAm/Calculateage.php?age='..URL.escape(Textage)..'')
+ge = https.request('https://black-source.tk/BlackTeAM/Calculateage.php?age='..URL.escape(Textage)..'')
 ag = JSON.decode(ge)
 send(msg.chat_id_, msg.id_, ag.ok.hso)
 end
 if text == "تعطيل الانستا" and Owner(msg) then
-send(msg.chat_id_, msg.id_, '゠⁞ تم تعطيل الانستا')
+send(msg.chat_id_, msg.id_, '⌯ تم تعطيل الانستا')
 database:set(bot_id.."VEctO:insta_bot"..msg.chat_id_,"close")
 end
 if text == "تفعيل الانستا" and Owner(msg) then
-send(msg.chat_id_, msg.id_,'゠⁞ تم تفعيل الانستا')
+send(msg.chat_id_, msg.id_,'⌯ تم تفعيل الانستا')
 database:set(bot_id.."VEctO:insta_bot"..msg.chat_id_,"open")
 end
 if text and text:match("^معلومات (.*)$") and database:get(bot_id.."VEctO:insta_bot"..msg.chat_id_) == "open" then
 local Textni = text:match("^معلومات (.*)$")
-data,res = https.request('https://VEctO-source.tk/VEctO TeAm/infoInstagram.php?username='..URL.escape(Textni)..'')
+data,res = https.request('https://black-source.tk/BlackTeAM/infoInstagram.php?username='..URL.escape(Textni)..'')
 if res == 200 then
 muaed = json:decode(data)
 if muaed.Info == true then
@@ -8232,16 +8232,17 @@ end
 end
 end
 if text == "تعطيل الافلام" and Owner(msg) then
-send(msg.chat_id_, msg.id_, '゠⁞ تم تعطيل الافلام')
+send(msg.chat_id_, msg.id_, '⌯ تم تعطيل الافلام')
 database:set(bot_id.."VEctO:movie_bot"..msg.chat_id_,"close")
 end
 if text == "تفعيل الافلام" and Owner(msg) then
-send(msg.chat_id_, msg.id_,'゠⁞ تم تفعيل الافلام')
+send(msg.chat_id_, msg.id_,'⌯ تم تفعيل الافلام')
 database:set(bot_id.."VEctO:movie_bot"..msg.chat_id_,"open")
 end
+
 if text and text:match("^فلم (.*)$") and database:get(bot_id.."VEctO:movie_bot"..msg.chat_id_) == "open" then
 local Textm = text:match("^فلم (.*)$")
-data,res = https.request('https://VEctO-source.tk/VEctO TeAm/movie.php?serch='..URL.escape(Textm)..'')
+data,res = https.request('https://black-source.tk/BlackTeAM/movie.php?serch='..URL.escape(Textm)..'')
 if res == 200 then
 getmo = json:decode(data)
 if getmo.Info == true then
