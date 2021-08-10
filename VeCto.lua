@@ -5397,7 +5397,6 @@ return false
 end
 
 if text == 'مطورسورس' or text == "مطور السورس" or text == "مطور سورس" then
-
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = '゠⁞ مبرمج السورس',url="t.me/mmssds"}},
