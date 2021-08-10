@@ -5399,7 +5399,7 @@ end
 
 if text == 'مطورسورس' or text == "مطور السورس" or text == "مطور سورس" then 
 
-Text = "⌔︙Dev Name : [𝗗ِ𝗮ٌِ𝗥ً𝗞 .](http://t.me/mmssds) 
+Text = "\n⌔︙Dev Name : [𝗗ِ𝗮ٌِ𝗥ً𝗞 .](http://t.me/mmssds) 
 \n[⌔︙Ch 𝚅𝚎𝙲𝚝𝚘 : ](http://t.me/team_vecto)"  
 keyboard = {} 
 keyboard.inline_keyboard = {
