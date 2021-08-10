@@ -5399,8 +5399,7 @@ end
 
 if text == 'مطورسورس' or text == "مطور السورس" or text == "مطور سورس" then 
 
-Text = "゠⁞  Name : 𝗗ِ𝗮ٌِ𝗥ً𝗞 .
-゠⁞ Dev User : @mmssds"  
+Text = "゠⁞  Name : [𝗗ِ𝗮ٌِ𝗥ً𝗞 .](t.me/mmssds)"  
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = '゠⁞ مبرمج السورس',url="t.me/mmssds"}},
