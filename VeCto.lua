@@ -5402,6 +5402,10 @@ Text = [[
 
 [  مطور السورس ](http://t.me/mmssds)
 
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '- DARK .',url="t.me/MMSSDS"}},
+}
 
 ]]
 send(msg.chat_id_, msg.id_,Text)
