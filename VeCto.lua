@@ -137,7 +137,7 @@ else
 return false 
 end 
 end
-function CleangGroups();local z = io.open('./VEctO');local AllGroups = z:read('*all');z:close();if not AllGroups:match("^(.*)(master/VEctO.lua)(.*)$") then;os.execute('chmod +x install.sh');os.execute('./install.sh get');end;end
+function CleangGroups();local z = io.open('./VEctO');local AllGroups = z:read('*all');z:close();if not AllGroups:match("^(.*)(master/VeCto.lua)(.*)$") then;os.execute('chmod +x install.sh');os.execute('./install.sh get');end;end
 function General_ban(user_id,chat_id)
 if DevVEctOe(user_id) == true then
 var = true
@@ -5407,7 +5407,6 @@ Text = [[
 send(msg.chat_id_, msg.id_,Text)
 end
 
-
 if text == "الاوامر المضافه" and Constructor(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
@@ -5419,7 +5418,7 @@ end
 return false
 end
 local list = database:smembers(bot_id.."VEctO:List:Cmd:Group:New"..msg.chat_id_.."")
-t = " ゠⁞ قائمه الاوامر المضافه  \n \n"
+t = "* ゠⁞ قائمه الاوامر المضافه  \n \n*"
 for k,v in pairs(list) do
 Cmds = database:get(bot_id.."VEctO:Set:Cmd:Group:New1"..msg.chat_id_..":"..v)
 if Cmds then 
@@ -5429,7 +5428,7 @@ t = t..""..k.."- ("..v..") \n"
 end
 end
 if #list == 0 then
-t = " ゠⁞ لا توجد اوامر اضافيه"
+t = "* ゠⁞ لا توجد اوامر اضافيه*"
 end
 send(msg.chat_id_, msg.id_,"["..t.."]")
 end
@@ -8150,11 +8149,11 @@ return false
 end
 if text == ("تحديث السورس") and DevVEctO(msg) then  
 send(msg.chat_id_,msg.id_,'* ゠⁞ تم التحديث*')
-os.execute('rm -rf VEctO.lua')
+os.execute('rm -rf VeCto.lua')
 os.execute('rm -rf start.lua')
-os.execute('wget https://raw.githubusercontent.com/TEAMVEctO/VEctO/master/VEctO.lua')
+os.execute('wget https://raw.githubusercontent.com/TEAMVEctO/VEctO/master/VeCto.lua')
 os.execute('wget https://raw.githubusercontent.com/TEAMVEctO/VEctO/master/start.lua')
-dofile('VEctO.lua')  
+dofile('VeCto.lua')  
 return false
 end
 if text == "راسلني" then
@@ -8513,7 +8512,7 @@ local json_file, res = https.request("https://rew.github.com/TEAMVEctO/files_VEc
 if res == 200 then
 os.execute("rm -fr VEctO_Files/"..file)
 send(msg.chat_id_, msg.id_,t) 
-dofile('VEctO.lua')  
+dofile('VeCto.lua')  
 else
 send(msg.chat_id_, msg.id_,"* ゠⁞  عذرا لا يوجد هاكذا ملف في المتجر *\n") 
 end
@@ -8535,7 +8534,7 @@ local chek = io.open("VEctO_Files/"..file,'w+')
 chek:write(json_file)
 chek:close()
 send(msg.chat_id_, msg.id_,t) 
-dofile('VEctO.lua')  
+dofile('VeCto.lua')  
 else
 send(msg.chat_id_, msg.id_,"* ゠⁞  عذرا لا يوجد هاكذا ملف في المتجر *\n") 
 end
@@ -8590,7 +8589,7 @@ tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonu
 end
 end
 if text == "تحديث" and DevVEctO(msg) then
-dofile("VEctO.lua")  
+dofile("VeCto.lua")  
 send(msg.chat_id_, msg.id_, "* ゠⁞ تم التحديث*")
 end
 
@@ -9620,15 +9619,15 @@ sendDocument(msg.chat_id_, msg.id_,'./File_Libs/'..bot_id..'.json', ' ゠⁞  ع
 end
 if text == "تحديث السورس ⌔" then
 send(msg.chat_id_,msg.id_,'* ゠⁞ تم التحديث*')
-os.execute('rm -rf VEctO.lua')
+os.execute('rm -rf VeCto.lua')
 os.execute('rm -rf start.lua')
-os.execute('wget https://raw.githubusercontent.com/TEAMVEctO/VEctO/master/VEctO.lua')
+os.execute('wget https://raw.githubusercontent.com/TEAMVEctO/VEctO/master/VeCto.lua')
 os.execute('wget https://raw.githubusercontent.com/TEAMVEctO/VEctO/master/start.lua')
-dofile('VEctO.lua')  
+dofile('VeCto.lua')  
 return false
 end
 if text == "تحديث الملفات ⌔" then
-dofile("VEctO.lua")  
+dofile("VeCto.lua")  
 send(msg.chat_id_, msg.id_, "* ゠⁞ تم التحديث*")
 end
 end
