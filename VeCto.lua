@@ -5402,10 +5402,6 @@ Text = [[
 
 [  مطور السورس ](http://t.me/mmssds)
 
-keyboard = {} 
-keyboard.inline_keyboard = {
-{{text = '- DARK .',url="t.me/MMSSDS"}},
-}
 
 ]]
 send(msg.chat_id_, msg.id_,Text)
@@ -8599,20 +8595,17 @@ end
 
 if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then  
 
-Text = [[
-
-[• 𝚅𝚎𝙲𝚝𝚘 𝖲𝗈𝗎𝗋𝖼𝖾  .](http://t.me/TEAM_VEctO) 
-     
- [• 𝚅𝚎𝙲𝚝𝚘 Developer .](http://t.me/mmssds) 
-
- [• 𝚂𝚞𝙿𝚎𝚛 𝚅𝚎𝙲𝚝𝚘 .](https://t.me/joinchat/57kgEPEjw7AyMTky)
-
-
-     
-
-]]
-send(msg.chat_id_, msg.id_,Text)
+Text = "ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄʀ 𝐯𝐞𝐜𝐭𝐨 \n\n[⌯  𝐯𝐞𝐜𝐭𝐨 ᴄʜᴀɴɴᴇʟ](http://t.me/team_vecto)\n\n[⌯  ɪɴғᴏ sᴏᴜʀᴄᴇ](http://t.me/tools_vecto)\n\n[⌯  𝐯𝐞𝐜𝐭𝐨 ᴅᴇᴠᴇʟᴏᴘᴇʀ](http://t.me/mmssds)\n\n[⌯  ʙᴏᴛ 𝐯𝐞𝐜𝐭𝐨](http://t.mmeTOWS11bot)"
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '⌯ sᴏᴜʀᴄʀ 𝐯𝐞𝐜𝐭𝐨',url="t.me/TEAM_VECTO/3"}},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/TEAM_VECTO&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
+
+
+
 if text == 'الاوامر' and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
