@@ -8593,7 +8593,7 @@ end
 
 if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then  
 
-Text = "ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄʀ 𝐯𝐞𝐜𝐭𝐨 \n\n[゠⁞  𝐯𝐞𝐜𝐭𝐨 ᴄʜᴀɴɴᴇʟ](http://t.me/team_vecto)\n\n[゠⁞  ɪɴғᴏ sᴏᴜʀᴄᴇ](http://t.me/tools_vecto)\n\n[゠⁞  𝐯𝐞𝐜𝐭𝐨 ᴅᴇᴠᴇʟᴏᴘᴇʀ](http://t.me/mmssds)\n\n[゠⁞  ʙᴏᴛ 𝐯𝐞𝐜𝐭𝐨](http://t.mmeTOWS11bot)"
+Text = "ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄʀ 𝐯𝐞𝐜𝐭𝐨 \n\n[゠⁞  𝐯𝐞𝐜𝐭𝐨 ᴄʜᴀɴɴᴇʟ](http://t.me/team_vecto)\n\n[゠⁞  ɪɴғᴏ sᴏᴜʀᴄᴇ](http://t.me/tools_vecto)\n\n[゠⁞  𝐯𝐞𝐜𝐭𝐨 ᴅᴇᴠᴇʟᴏᴘᴇʀ](http://t.me/mmssds)\n\n[゠⁞  ʙᴏᴛ 𝐯𝐞𝐜𝐭𝐨](http://t.me/TOWS11bot)"
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = '゠⁞ sᴏᴜʀᴄʀ 𝐯𝐞𝐜𝐭𝐨',url="t.me/TEAM_VECTO/3"}},
