@@ -5412,7 +5412,7 @@ if text == 'رابط الحذف' or text == 'رابط حذف' then
 t =[[
 *رابط الحذف في جميع مواقع التواصل ゠⁞ 
 فكر قبل لا تتسرع وتروح*
-ٴ*•━━━━━━ 𝙑𝙀 ━━━━━━━•*ٴ
+ٴ*┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉*ٴ
  *゠⁞  رابط حذف*  [Telegram](https://my.telegram.org/auth?to=delete) ܁
  *゠⁞  رابط حذف* [instagram](https://www.instagram.com/accounts/login/?next=/accounts/remove/request/permanent/) ܁
  *゠⁞  رابط حذف* [Facebook](https://www.facebook.com/help/deleteaccount) ܁
@@ -5434,16 +5434,6 @@ chat_id_ = chat_id
 }, cb, nil)
 end
 
-if text == "تفعيل تنظيف التلقائي" and BasicConstructor(msg)  then
-database:set(bot_id.."LoMsg"..msg.chat_id_,true)
-send(msg.chat_id_, msg.id_, '*゠⁞ بواسطه* » ['..Rutba(msg.sender_user_id_,msg.chat_id_)..'](T.ME/'..(data.username_ or 'TEAM_VECTO')..') \n*゠⁞ تم تفعيل التنظيف التلقائي* ')
-return false
-end
-if text == "تعطيل تنظيف التلقائي" and BasicConstructor(msg) then
-database:del(bot_id.."LoMsg"..msg.chat_id_)
-send(msg.chat_id_, msg.id_, '*゠⁞ بواسطه* » ['..Rutba(msg.sender_user_id_,msg.chat_id_)..'](T.ME/'..(data.username_ or 'TEAM_VECTO')..') \n*゠⁞ تم تعطيل التنظيف التلقائي* ')
-return false
-end
 
 if text == "الاوامر المضافه" and Constructor(msg) then
 if AddChannel(msg.sender_user_id_) == false then
