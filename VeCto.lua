@@ -8212,7 +8212,7 @@ ge = https.request('https://black-source.tk/BlackTeAM/Calculateage.php?age='..UR
 ag = JSON.decode(ge)
 send(msg.chat_id_, msg.id_, ag.ok.hso)
 end
-if text == "تعطيل الانستا" and Owner(msg) then
+text == "تعطيل الانستا" and Owner(msg) then
 send(msg.chat_id_, msg.id_, '⌯ تم تعطيل الانستا')
 database:set(bot_id.."VEctO:insta_bot"..msg.chat_id_,"close")
 end
@@ -8222,7 +8222,7 @@ database:set(bot_id.."VEctO:insta_bot"..msg.chat_id_,"open")
 end
 if text and text:match("^معلومات (.*)$") and database:get(bot_id.."VEctO:insta_bot"..msg.chat_id_) == "open" then
 local Textni = text:match("^معلومات (.*)$")
-data,res = https.request('https://black-source.tk/TEAMVEctO/infoInstagram.php?username='..URL.escape(Textni)..'')
+data,res = https.request('https://black-source.tk/BlackTeAM/infoInstagram.php?username='..URL.escape(Textni)..'')
 if res == 200 then
 muaed = json:decode(data)
 if muaed.Info == true then
