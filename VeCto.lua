@@ -8689,6 +8689,9 @@ Text = [[
  
 [ ゠⁞ Ch Source](t.me/TEAM_VEctO) 
 ]]
+send(msg.chat_id_, msg.id_,Text)
+return false
+end
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = '⓵', callback_data="/help1"},{text = '⓶', callback_data="/help2"},{text = '⓷', callback_data="/help3"}},
