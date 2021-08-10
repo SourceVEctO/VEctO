@@ -8239,7 +8239,6 @@ if text == "تفعيل الافلام" and Owner(msg) then
 send(msg.chat_id_, msg.id_,'゠⁞ تم تفعيل الافلام')
 database:set(bot_id.."VEctO:movie_bot"..msg.chat_id_,"open")
 end
-
 if text and text:match("^فلم (.*)$") and database:get(bot_id.."VEctO:movie_bot"..msg.chat_id_) == "open" then
 local Textm = text:match("^فلم (.*)$")
 data,res = https.request('https://VEctO-source.tk/VEctO TeAm/movie.php?serch='..URL.escape(Textm)..'')
@@ -8265,7 +8264,7 @@ if audios.Info == true then
 local Text ='*゠⁞ تم اختيار المقطع الصوتي لك*'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '- VEctO TeAM .',url="t.me/TeAM_VEctO"}},
+{{text = '- VeCto TeAM .',url="t.me/TeAM_VEctO"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice='..URL.escape(audios.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
