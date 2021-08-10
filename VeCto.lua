@@ -8700,6 +8700,7 @@ return false
 end
 
 
+
 if text == 'م1' and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
