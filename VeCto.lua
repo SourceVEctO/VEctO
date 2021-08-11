@@ -8667,6 +8667,7 @@ https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. ms
 end
 
 
+
 if text == 'فويس' then
 data,res = https.request('https://vvvzvv.ml/amirVois/Teland.php')
 if res == 200 then
@@ -8682,6 +8683,7 @@ https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. ms
 end
 end
 end
+
 
 
 if text == 'الاوامر' and Addictive(msg) then  
