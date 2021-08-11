@@ -5415,7 +5415,7 @@ t =[[
 ٴ*┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉*ٴ
  *゠⁞  رابط حذف*  [Telegram](https://my.telegram.org/auth?to=delete) ܁
  *゠⁞  رابط حذف* [instagram](https://www.instagram.com/accounts/login/?next=/accounts/remove/request/permanent/) ܁
- *゠⁞  رابط حذف* [Facebook](https://www.facebook.com/help/deleteaccount) ܁
+ *゠⁞  رابط حذف* [Facebook](https://www.facebook.com/الاوامر/deleteaccount) ܁
  *゠⁞  رابط حذف* [Snspchat](https://accounts.snapchat.com/accounts/login?continue=https%3A%2F%2Faccounts.snapchat.com%2Faccounts%2Fdeleteaccount) ܁
 ]]
 send(msg.chat_id_, msg.id_,t) 
@@ -8667,6 +8667,7 @@ https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. ms
 end
 
 
+
 if data.ID == "UpdateNewCallbackQuery" then
 local Chat_id = data.chat_id_
 local From_id = data.id_
@@ -8678,6 +8679,7 @@ if DAata == 'okCaptcha'..data.sender_user_id_ then
 DeleteMessage(Chat_id, {[0] = Msg_id}) 
 return https.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. Chat_id .. "&user_id="..Ok_id .. "&can_send_messages=True&can_send_media_messages=True&can_send_other_messages=True&can_add_web_page_previews=True")
 end
+
 
 
 if text == 'الاوامر' and Addictive(msg) then  
@@ -8723,7 +8725,12 @@ send(msg.chat_id_, msg.id_,' ゠⁞ عـليك الاشـتࢪاك في قنـا
 end
 return false
 end
-Text = [[
+if DAata == '/م1' then
+if not Mod(data) then
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = [[
  ゠⁞ اوامر حمايه المجموعه
  
  ゠⁞ قفل/فتح + الاوامر الادناه 
@@ -8759,8 +8766,8 @@ Text = [[
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '⓵', callback_data="/help1"},{text = '⓶', callback_data="/help2"},{text = '⓷', callback_data="/help3"}},
-{{text = '⓸', callback_data="/help4"},{text = '⓹', callback_data="/help5"}},
+{{text = '⓵', callback_data="/م1"},{text = '⓶', callback_data="/م2"},{text = '⓷', callback_data="/م3"}},
+{{text = '⓸', callback_data="/م4"},{text = '⓹', callback_data="/م5"}},
 {{text = 'الاوامر الرئيسيه', callback_data="/الاوامر"}},
 }
 local msg_id = msg.id_/2097152/0.5
@@ -8840,9 +8847,9 @@ Text = [[
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '⓵', callback_data="/help1"},{text = '⓶', callback_data="/help2"},{text = '⓷', callback_data="/help3"}},
-{{text = '⓸', callback_data="/help4"},{text = '⓹', callback_data="/help5"}},
-{{text = 'الاوامر الرئيسيه', callback_data="/help"}},
+{{text = '⓵', callback_data="/م1"},{text = '⓶', callback_data="/م2"},{text = '⓷', callback_data="/م3"}},
+{{text = '⓸', callback_data="/م4"},{text = '⓹', callback_data="/م5"}},
+{{text = 'الاوامر الرئيسيه', callback_data="/الاوامر"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -8894,9 +8901,9 @@ Text = [[
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '⓵', callback_data="/help1"},{text = '⓶', callback_data="/help2"},{text = '⓷', callback_data="/help3"}},
-{{text = '⓸', callback_data="/help4"},{text = '⓹', callback_data="/help5"}},
-{{text = 'الاوامر الرئيسيه', callback_data="/help"}},
+{{text = '⓵', callback_data="/م1"},{text = '⓶', callback_data="/م2"},{text = '⓷', callback_data="/م3"}},
+{{text = '⓸', callback_data="/م4"},{text = '⓹', callback_data="/م5"}},
+{{text = 'الاوامر الرئيسيه', callback_data="/الاوامر"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -8937,9 +8944,9 @@ Text = [[
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '⓵', callback_data="/help1"},{text = '⓶', callback_data="/help2"},{text = '⓷', callback_data="/help3"}},
-{{text = '⓸', callback_data="/help4"},{text = '⓹', callback_data="/help5"}},
-{{text = 'الاوامر الرئيسيه', callback_data="/help"}},
+{{text = '⓵', callback_data="/م1"},{text = '⓶', callback_data="/م2"},{text = '⓷', callback_data="/م3"}},
+{{text = '⓸', callback_data="/م4"},{text = '⓹', callback_data="/م5"}},
+{{text = 'الاوامر الرئيسيه', callback_data="/الاوامر"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -8994,9 +9001,9 @@ Text = [[
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '⓵', callback_data="/help1"},{text = '⓶', callback_data="/help2"},{text = '⓷', callback_data="/help3"}},
-{{text = '⓸', callback_data="/help4"},{text = '⓹', callback_data="/help5"}},
-{{text = 'الاوامر الرئيسيه', callback_data="/help"}},
+{{text = '⓵', callback_data="/م1"},{text = '⓶', callback_data="/م2"},{text = '⓷', callback_data="/م3"}},
+{{text = '⓸', callback_data="/م4"},{text = '⓹', callback_data="/م5"}},
+{{text = 'الاوامر الرئيسيه', callback_data="/الاوامر"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
