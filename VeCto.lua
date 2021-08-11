@@ -8711,7 +8711,8 @@ if DAata == 'okCaptcha'..data.sender_user_id_ then
 DeleteMessage(Chat_id, {[0] = Msg_id}) 
 return https.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. Chat_id .. "&user_id="..Ok_id .. "&can_send_messages=True&can_send_media_messages=True&can_send_other_messages=True&can_add_web_page_previews=True")
 end
-if text == 'م1' and Addictive(msg) then  
+
+if text == 'م1' then 
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
