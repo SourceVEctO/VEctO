@@ -2780,7 +2780,7 @@ database:sadd(bot_id.."VEctO:GBan:User", userid)
 Reply_Status(msg,userid,"reply"," ゠⁞ تم حظره عام من المجموعات")  
 return false
 end
-if text == ("كتم عام") and msg.reply_to_message_id_ and DevVEctO(msg) then
+if text == "كتم عام" and msg.reply_to_message_id_ and DevVEctO(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -2791,7 +2791,7 @@ end
 return false
 end
 function start_function(extra, result, success)
-if VEctOSudoBot(result.sender_user_id_) then
+if  DevVEctOBot(result.sender_user_id_) then
 send(msg.chat_id_, msg.id_,"*゠⁞ لا تستطيع (كتم،طرد،حظر،تققيد) مطور السورس او الاساسي*")
 return false 
 end
@@ -2827,7 +2827,7 @@ if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
 send(msg.chat_id_,msg.id_," *゠⁞ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !*")   
 return false 
 end  
-if VEctOSudoBot(result.id_) then
+if  DevVEctOBot(result.id_) then
 send(msg.chat_id_, msg.id_,"*゠⁞ لا تستطيع (كتم،طرد،حظر،تققيد) مطور السورس او الاساسي*")
 return false 
 end
@@ -2858,7 +2858,7 @@ send(msg.chat_id_, msg.id_,'  *゠⁞ عذࢪا عليڪ الاشتࢪاڪ في 
 end
 return false
 end
-if VEctOSudoBot(bot_id) then
+if  DevVEctOBot(bot_id) then
 send(msg.chat_id_, msg.id_,"*゠⁞ لا تستطيع (كتم،طرد،حظر،تققيد) مطور السورس او الاساسي*")
 return false 
 end
