@@ -5038,6 +5038,7 @@ database:sadd(bot_id.."VEctO:List:Cmd:Group:New"..msg.chat_id_,"تفع")
 send(msg.chat_id_, msg.id_,"* ゠⁞ تم ترتيب الاوامر بالشكل التالي ~\n- ايدي - ا .\n- مميز - م .\n- ادمن - اد .\n- مدير - مد . \n- منشى - من . \n- المنشئ الاساسي - اس  . \n- تعطيل الايدي بالصوره - تعط .\n- تفعيل الايدي بالصوره - تفع .*")  
 end
 
+
 if text == "كت" or text == "كت تويت" then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
@@ -5055,6 +5056,7 @@ ktbrok = math.random(#ktSJJJJ)
 send(msg.chat_id_, msg.id_, ktSJJJJ[ktbrok]) 
 
 end
+
 
 if text == 'هلو' then
 TextReply = 'هـلاوات يحات مـسيوو وايد💘😻'
