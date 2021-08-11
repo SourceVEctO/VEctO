@@ -8669,17 +8669,17 @@ end
 
 
 if text == "فويس" then
-data,res = https.request('https://apiabs.ml/Audios.php')
+data,res = https.request('https://vvvzvv.ml/amirVois/Teland.php')
 if res == 200 then
-Audios = json:decode(data)
-if Audios.Info == true then
-local Text ='゠⁞  تم اختيار المقطع الصوتي لك'
+audios = json:decode(data)
+if audios.Info == true then
+local Text ='*゠⁞ تم اختيار المقطع الصوتي لك*'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = ' - VeCto TeAM .',url="t.me/Team_vecto"}},
+{{text = ' - VeCto 𝑇𝐸𝐴𝑀.',url="t.me/team_vecto"}},
 }
 local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..TokenBot..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice='..URL.escape(Audios.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice='..URL.escape(audios.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 end
 end
