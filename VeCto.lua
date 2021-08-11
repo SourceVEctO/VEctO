@@ -2780,7 +2780,8 @@ database:sadd(bot_id.."VEctO:GBan:User", userid)
 Reply_Status(msg,userid,"reply"," ゠⁞ تم حظره عام من المجموعات")  
 return false
 end
-if text == "كتم عام" then
+
+if text == ("كتم عام") and msg.reply_to_message_id_ and DevVEctO(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -2791,7 +2792,7 @@ end
 return false
 end
 function start_function(extra, result, success)
-if DevVEctOBot(result.sender_user_id_) then
+if VEctOSudoBot(result.sender_user_id_) then
 send(msg.chat_id_, msg.id_,"*゠⁞ لا تستطيع (كتم،طرد،حظر،تققيد) مطور السورس او الاساسي*")
 return false 
 end
@@ -2802,7 +2803,7 @@ end
 database:sadd(bot_id..'Gmute:User', result.sender_user_id_)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},
 function(arg,data) 
-usertext = '\n *゠⁞ اسم المستخدم »* ['..data.first_name_..'](t.me/'..(data.username_ or 'TEAM_VECTO')..')'
+usertext = '\n *゠⁞ اسم المستخدم »* ['..data.first_name_..'](t.me/'..(data.username_ or 'team_VEctO')..')'
 status  = '\n*゠⁞ تم كتمه عام من الكروبات*'
 send(msg.chat_id_, msg.id_, usertext..status)
 end,nil)
@@ -2827,7 +2828,7 @@ if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
 send(msg.chat_id_,msg.id_," *゠⁞ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !*")   
 return false 
 end  
-if DevVEctOBot(result.id_) then
+if VEctOSudoBot(result.id_) then
 send(msg.chat_id_, msg.id_,"*゠⁞ لا تستطيع (كتم،طرد،حظر،تققيد) مطور السورس او الاساسي*")
 return false 
 end
@@ -2835,7 +2836,7 @@ if tonumber(result.id_) == tonumber(bot_id) then
 send(msg.chat_id_, msg.id_, " *゠⁞ لا تسطيع كتم البوت عام*")
 return false 
 end
-usertext = '\n *゠⁞ اسم المستخدم »* ['..result.title_..'](t.me/'..(username or 'TEAM_VECTO')..')'
+usertext = '\n *゠⁞ اسم المستخدم »* ['..result.title_..'](t.me/'..(username or 'team_VEctO')..')'
 status  = '\n*゠⁞ تم كتمه عام من الكروبات*'
 texts = usertext..status
 database:sadd(bot_id..'Gmute:User', result.id_)
@@ -2858,7 +2859,7 @@ send(msg.chat_id_, msg.id_,'  *゠⁞ عذࢪا عليڪ الاشتࢪاڪ في 
 end
 return false
 end
-if DevVEctOBot(bot_id) then
+if VEctOSudoBot(bot_id) then
 send(msg.chat_id_, msg.id_,"*゠⁞ لا تستطيع (كتم،طرد،حظر،تققيد) مطور السورس او الاساسي*")
 return false 
 end
@@ -2870,7 +2871,7 @@ database:sadd(bot_id..'Gmute:User', userid)
 
 tdcli_function ({ID = "GetUser",user_id_ = userid},function(arg,data) 
 if data.first_name_ then
-usertext = '\n *゠⁞ اسم المستخدم »* ['..data.first_name_..'](t.me/'..(data.username_ or 'TEAM_VECTO')..')'
+usertext = '\n *゠⁞ اسم المستخدم »* ['..data.first_name_..'](t.me/'..(data.username_ or 'team_VEctO')..')'
 status  = '\n*゠⁞ تم كتمه عام من الكروبات*'
 send(msg.chat_id_, msg.id_, usertext..status)
 else
@@ -2880,6 +2881,7 @@ send(msg.chat_id_, msg.id_, usertext..status)
 end;end,nil)
 return false
 end
+
 if text == ("الغاء العام") and msg.reply_to_message_id_ and DevVEctO(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
