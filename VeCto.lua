@@ -2882,6 +2882,7 @@ end;end,nil)
 return false
 end
 
+
 if text == ("الغاء العام") and msg.reply_to_message_id_ and DevVEctO(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
