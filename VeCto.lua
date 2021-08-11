@@ -5053,6 +5053,7 @@ local ktSJJJJ = {
 }
 ktbrok = math.random(#ktSJJJJ)
 send(msg.chat_id_, msg.id_, ktSJJJJ[ktbrok]) 
+
 end
 
 
@@ -8685,7 +8686,6 @@ https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. ms
 end
 end
 end
-
 
 
 
