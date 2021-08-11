@@ -8667,6 +8667,21 @@ https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. ms
 end
 
 
+if text == "فويس" and ChCheck(msg) then
+data,res = https.request('https://apiabs.ml/Audios.php')
+if res == 200 then
+Audios = json:decode(data)
+if Audios.Info == true then
+local Text ='゠⁞  تم اختيار المقطع الصوتي لك'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '- VeCto TeAM .',url="t.me/Team_vecto"}},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..TokenBot..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice='..URL.escape(Audios.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+end
+end
 
 if text == 'الاوامر' and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
@@ -8699,23 +8714,17 @@ https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. 
 return false
 end
 
-if data.ID == "UpdateNewCallbackQuery" then
-local Chat_id = data.chat_id_
-local From_id = data.id_
-local Msg_id = data.message_id_
-local msg_idd = (Msg_id) 
-local DAata = data.payload_.data_
-Ok_id  = DAata:match("(%d+)")  
-if DAata == 'okCaptcha'..data.sender_user_id_ then  
-DeleteMessage(Chat_id, {[0] = Msg_id}) 
-return https.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. Chat_id .. "&user_id="..Ok_id .. "&can_send_messages=True&can_send_media_messages=True&can_send_other_messages=True&can_add_web_page_previews=True")
+if text == 'م1' and Addictive(msg) then  
+if AddChannel(msg.sender_user_id_) == false then
+local textchuser = database:get(bot_id..'text:ch:user')
+if textchuser then
+send(msg.chat_id_, msg.id_,'['..textchuser..']')
+else
+send(msg.chat_id_, msg.id_,'゠⁞ عـليك الاشـتࢪاك في قنـاة البـوت اولآ . \n ゠⁞ قنـاة البـوت ←  ['..database:get(bot_id..'add:ch:username')..']')
 end
-if DAata == '/م1' then
-if not Mod(data) then
-https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
 return false
 end
-local Text =[[
+Text = [[
  ゠⁞ اوامر حمايه المجموعه
  
  ゠⁞ قفل/فتح + الاوامر الادناه 
